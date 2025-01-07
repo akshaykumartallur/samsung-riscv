@@ -52,4 +52,6 @@
     <b>For O1: The number of instructions were 15<br>
     For Ofast: the number of instructions were 12</b>
     </details>
+<hr>
+<!--End of Task 1-->
 
