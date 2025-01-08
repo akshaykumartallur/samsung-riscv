@@ -43,14 +43,14 @@
     <br>
     <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/object%20dump.jpg" alt=Object dump>
       <br><br>
+        <b> For O1: The number of instructions were 15</b><br><br>
     <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/assembly%20code%20for%20O1.jpg" alt=O1 output>
     <br><br>
+        <b>For Ofast: the number of instructions were 12</b><br><br>
     <pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c</code></pre>
     <br>
     <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/assembly%20code%20for%20Ofast.jpg"  alt=Ofast output>
     <br><br>
-    <b>For O1: The number of instructions were 15<br>
-    For Ofast: the number of instructions were 12</b>
     </details>
 <hr>
 <!--End of Task 1-->
