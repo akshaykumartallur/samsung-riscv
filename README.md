@@ -24,6 +24,16 @@
     gedit sum1ton.c
     gcc sum1ton.c
     ./a.out</code></pre>
+        <pre>#include&ltstdio.h&gt
+
+int main(){
+		int i, sum=0, n=1000;
+		for (i=1;i<=n;
+++i){
+				sum+=i;	}
+		printf("Sum of Numbers from 1 to %d is %d\n",n,sum);
+return 0;
+}</pre>
     <br>
     <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/C_code.png"  alt=C code>
     <br><br>
