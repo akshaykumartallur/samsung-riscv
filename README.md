@@ -54,4 +54,143 @@
     </details>
 <hr>
 <!--End of Task 1-->
-
+<!-- Task 2 -->
+<!-- Spike for Sum1ton -->
+<details>
+    <p><summary>
+        <b>Task 2:</b> Debugging Using Spike Optimization 
+    </summary></p>
+    <details>
+        <p><summary>1. Sum of Integers from 1 to n</summary></p>
+        <b>Debugging sum1ton.o for O1</b>
+        <pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+ls -ltr sum1ton.o
+spike pk sum1ton.o
+spike -d pk sum1ton.o</code></p></pre>
+        <b>O1 assembly output</b>
+     <pre>0000000000010184 &ltmain&gt:
+   10184:       ff010113                addi    sp,sp,-16
+   10188:       00113423                sd      ra,8(sp)
+   1018c:       3e800793                li      a5,1000
+   10190:       fff7879b                addiw   a5,a5,-1
+   10194:       fe079ee3                bnez    a5,10190 &ltmain+0xc&gt
+   10198:       0007a637                lui     a2,0x7a
+   1019c:       31460613                addi    a2,a2,788 # 7a314 <__BSS_END__+0x5710c>
+   101a0:       3e800593                li      a1,1000
+   101a4:       00021537                lui     a0,0x21
+   101a8:       19050513                addi    a0,a0,400 # 21190 <__clzdi2+0x48>
+   101ac:       26c000ef                jal     ra,10418 &ltprintf&gt
+   101b0:       00000513                li      a0,0
+   101b4:       00813083                ld      ra,8(sp)
+   101b8:       01010113                addi    sp,sp,16
+   101bc:       00008067                ret
+</pre>
+       <p>15 instructions for O1</p>
+       <br>
+       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_sum1ton.png" alt=debugging O1>
+       <br><br>
+       <b>Debugging sum1ton.o for Ofast</b>
+       <pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+spike pk sum1ton.o
+spike -d pk sum1ton.o</code></p></pre>
+       <b>Ofast assembly output</b>
+       <pre>00000000000100b0 &ltmain&gt:
+   100b0:       0007a637                lui     a2,0x7a
+   100b4:       00021537                lui     a0,0x21
+   100b8:       ff010113                addi    sp,sp,-16
+   100bc:       31460613                addi    a2,a2,788 # 7a314 &lt__BSS_END__+0x5710c&gt
+   100c0:       3e800593                li      a1,1000
+   100c4:       18050513                addi    a0,a0,384 # 21180 <__clzdi2+0x44>
+   100c8:       00113423                sd      ra,8(sp)
+   100cc:       340000ef                jal     ra,1040c &ltprintf&gt
+   100d0:       00813083                ld      ra,8(sp)
+   100d4:       00000513                li      a0,0
+   100d8:       01010113                addi    sp,sp,16
+   100dc:       00008067                ret
+</pre>
+       <p>12 instructions for Ofast</p>
+       <br>
+       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_sum1ton.png" alt=debugging Ofast>
+    </details>
+       <details>
+           <p><summary>2. Factorial of a Number</summary></p>
+           <b>Compiling Factorial C program</b>
+           <pre><code>gedit fact.c
+           gcc fact.c
+           ./a.out</code></pre>
+           <pre>#inlcude&ltstdio.h&gt
+int main(){
+               int fact = 1;
+               int i = 1;
+               int n = 10;
+                   while(i<=n){
+                       fact*=i;
+                       ++i;
+                       }
+                printf("Factorial of %d is %d\n",n,fact);
+        return 0;
+                       }
+                       </pre>
+    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Factorial%20Compilation.png", alt=Factorial Compilation>
+                       <br><br>
+        <b>Debugging fact.o for O1</b>
+       <pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
+spike pk fact.o
+spike -d pk fact.o</code></p></pre>
+       <b>O1 assembly output</b>
+        <pre>0000000000010184 &ltmain&gt:
+   10184:       fe010113                addi    sp,sp,-32
+   10188:       00113c23                sd      ra,24(sp)
+   1018c:       00813823                sd      s0,16(sp)
+   10190:       00913423                sd      s1,8(sp)
+   10194:       00100593                li      a1,1
+   10198:       00100413                li      s0,1
+   1019c:       00b00493                li      s1,11
+   101a0:       00040513                mv      a0,s0
+   101a4:       03c000ef                jal     ra,101e0 &lt__muldi3&gt
+   101a8:       0005059b                sext.w  a1,a0
+   101ac:       0014041b                addiw   s0,s0,1
+   101b0:       fe9418e3                bne     s0,s1,101a0 &ltmain+0x1c&gt
+   101b4:       00058613                mv      a2,a1
+   101b8:       00a00593                li      a1,10
+   101bc:       00021537                lui     a0,0x21
+   101c0:       1b050513                addi    a0,a0,432 # 211b0 <__clzdi2+0x48>
+   101c4:       298000ef                jal     ra,1045c &ltprintf&gt
+   101c8:       00000513                li      a0,0
+   101cc:       01813083                ld      ra,24(sp)
+   101d0:       01013403                ld      s0,16(sp)
+   101d4:       00813483                ld      s1,8(sp)
+   101d8:       02010113                addi    sp,sp,32
+   101dc:       00008067                ret
+</pre>
+       <p>23 instructions for O1</p>
+                       <br>
+    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_factorial.png",alt=Debug O1>
+                       <br><br>
+    <b>Debugging fact.o for Ofast</b>
+       <pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
+spike pk fact.o
+spike -d pk fact.o</code></p></pre>
+       <b>Ofast assembly output</b>  
+       <pre>00000000000100b0 &ltmain&gt:
+   100b0:       00376637                lui     a2,0x376
+   100b4:       00021537                lui     a0,0x21
+   100b8:       ff010113                addi    sp,sp,-16
+   100bc:       f0060613                addi    a2,a2,-256 # 375f00 <__BSS_END__+0x352cf8>
+   100c0:       00a00593                li      a1,10
+   100c4:       18050513                addi    a0,a0,384 # 21180 <__clzdi2+0x44>
+   100c8:       00113423                sd      ra,8(sp)
+   100cc:       340000ef                jal     ra,1040c &ltprintf&gt
+   100d0:       00813083                ld      ra,8(sp)
+   100d4:       00000513                li      a0,0
+   100d8:       01010113                addi    sp,sp,16
+   100dc:       00008067                ret
+</pre>
+       <p>12 instructions for Ofast</p>
+       <br>
+       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_factorial.png",alt=Ofast debug>
+       <br><br>
+       </details>
+</details>
+<hr>
+<!--End of Task 2-->
