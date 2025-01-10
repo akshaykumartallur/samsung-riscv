@@ -9,22 +9,22 @@
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a>
 <hr>
 <!-- Task 1 -->
-    <details>
-      <p><summary>
-      <b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISV to get the         corresponding assembly instructions for O1 and Ofast
-    </summary></p>
-    <b>1. Install Ubuntu 18.04 LTS on Oracle Virtual Machine Box and open VDI file provided</b>
-    <br><br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/VM_box.png"  alt=Virtual     Machine>
-    <br><br>
-    <b>2. Compiling C code</b>
-    <br><br>
-    <pre><code>
-    cd
-    gedit sum1ton.c
-    gcc sum1ton.c
-    ./a.out</code></pre>
-        <pre>#include&ltstdio.h&gt
+<details>
+<p><summary>
+<b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISV to get the         corresponding assembly instructions for O1 and Ofast
+</summary></p>
+<b>1. Install Ubuntu 18.04 LTS on Oracle Virtual Machine Box and open VDI file provided</b>
+<br><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/VM_box.png"  alt=Virtual     Machine>
+<br><br>
+<b>2. Compiling C code</b>
+<br><br>
+<pre><code>
+cd
+gedit sum1ton.c
+gcc sum1ton.c
+./a.out</code></pre>
+<pre>#include&ltstdio.h&gt
 int main(){
 		int i, sum=0, n=1000;
 			for (i=1;i<=n;++i){
@@ -32,51 +32,51 @@ int main(){
 		printf("Sum of Numbers from 1 to %d is %d\n",n,sum);
 return 0;
 	}</pre>
-    <br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/C_code.png"  alt=C code>
-    <br><br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/output_of_c_code.png"      alt=commands for c compilation>
-    <br><br>
-    <b>3. Object Dump and O1, Ofast Output</b>
-    <br><br>
-    <pre><code>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/C_code.png"  alt=C code>
+<br><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/output_of_c_code.png"      alt=commands for c compilation>
+<br><br>
+<b>3. Object Dump and O1, Ofast Output</b>
+<br><br>
+<pre><code>
     cat sum1ton.c
     riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
     ls -ltr sum1ton.o
-    </code></pre>
-    <br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/assembly_commands.png"    alt=Commands >
-    <br><br>
-    <pre><code>riscv64-unknown-elf-objdump -d sum1ton.o |less</code></pre>
-    <br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/objdump.png" alt=Object dump>
-      <br><br>
-        <b> For O1: The number of instructions were 15</b><br><br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/O1_output.png" alt=O1 output>
-    <br><br>
-        <b>For Ofast: the number of instructions were 12</b><br><br>
-    <pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c</code></pre>
-    <br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/Ofast_output.png"  alt=Ofast output>
-    <br><br>
-    </details>
+</code></pre>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/assembly_commands.png"    alt=Commands >
+<br><br>
+<pre><code>riscv64-unknown-elf-objdump -d sum1ton.o |less</code></pre>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/objdump.png" alt=Object dump>
+<br><br>
+<b> For O1: The number of instructions were 15</b><br><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/O1_output.png" alt=O1 output>
+<br><br>
+<b>For Ofast: the number of instructions were 12</b><br><br>
+<pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c</code></pre>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/Ofast_output.png"  alt=Ofast output>
+<br><br>
+</details>
 <hr>
 <!--End of Task 1-->
 <!-- Task 2 -->
 <!-- Spike for Sum1ton -->
 <details>
-    <p><summary>
-        <b>Task 2:</b> Debugging Using Spike Optimization 
-    </summary></p>
-    <details>
-        <p><summary>1. Sum of Integers from 1 to n</summary></p>
-        <b>Debugging sum1ton.o for O1</b>
-        <pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+<p><summary>
+<b>Task 2:</b> Debugging Using Spike Optimization 
+</summary></p>
+<details>
+<p><summary>1. Sum of Integers from 1 to n</summary></p>
+<b>Debugging sum1ton.o for O1</b>
+<pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ls -ltr sum1ton.o
 spike pk sum1ton.o
 spike -d pk sum1ton.o</code></p></pre>
-        <b>O1 assembly output</b>
-     <pre>0000000000010184 &ltmain&gt:
+<b>O1 assembly output</b>
+<pre>0000000000010184 &ltmain&gt:
    10184:       ff010113                addi    sp,sp,-16
    10188:       00113423                sd      ra,8(sp)
    1018c:       3e800793                li      a5,1000
@@ -93,16 +93,16 @@ spike -d pk sum1ton.o</code></p></pre>
    101b8:       01010113                addi    sp,sp,16
    101bc:       00008067                ret
 </pre>
-       <p>15 instructions for O1</p>
-       <br>
-       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_sum1ton.png" alt=debugging O1>
-       <br><br>
-       <b>Debugging sum1ton.o for Ofast</b>
-       <pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+<p>15 instructions for O1</p>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_sum1ton.png" alt=debugging O1>
+<br><br>
+<b>Debugging sum1ton.o for Ofast</b>
+<pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 spike pk sum1ton.o
 spike -d pk sum1ton.o</code></p></pre>
-       <b>Ofast assembly output</b>
-       <pre>00000000000100b0 &ltmain&gt:
+<b>Ofast assembly output</b>
+<pre>00000000000100b0 &ltmain&gt:
    100b0:       0007a637                lui     a2,0x7a
    100b4:       00021537                lui     a0,0x21
    100b8:       ff010113                addi    sp,sp,-16
@@ -116,17 +116,17 @@ spike -d pk sum1ton.o</code></p></pre>
    100d8:       01010113                addi    sp,sp,16
    100dc:       00008067                ret
 </pre>
-       <p>12 instructions for Ofast</p>
-       <br>
-       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_sum1ton.png" alt=debugging Ofast>
-    </details>
-       <details>
-           <p><summary>2. Factorial of a Number</summary></p>
-           <b>Compiling Factorial C program</b>
-           <pre><code>gedit fact.c
-           gcc fact.c
-           ./a.out</code></pre>
-           <pre>#inlcude&ltstdio.h&gt
+<p>12 instructions for Ofast</p>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_sum1ton.png" alt=debugging Ofast>
+</details>
+<details>
+<p><summary>2. Factorial of a Number</summary></p>
+<b>Compiling Factorial C program</b>
+<pre><code>gedit fact.c
+gcc fact.c
+./a.out</code></pre>
+<pre>#inlcude&ltstdio.h&gt
 int main(){
                int fact = 1;
                int i = 1;
@@ -138,15 +138,15 @@ int main(){
                 printf("Factorial of %d is %d\n",n,fact);
         return 0;
                        }
-                       </pre>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Factorial%20Compilation.png", alt=Factorial Compilation>
-                       <br><br>
-        <b>Debugging fact.o for O1</b>
-       <pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
+</pre>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Factorial%20Compilation.png", alt=Factorial Compilation>
+<br><br>
+<b>Debugging fact.o for O1</b>
+<pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
 spike -d pk fact.o</code></p></pre>
-       <b>O1 assembly output</b>
-        <pre>0000000000010184 &ltmain&gt:
+<b>O1 assembly output</b>
+<pre>0000000000010184 &ltmain&gt:
    10184:       fe010113                addi    sp,sp,-32
    10188:       00113c23                sd      ra,24(sp)
    1018c:       00813823                sd      s0,16(sp)
@@ -171,16 +171,16 @@ spike -d pk fact.o</code></p></pre>
    101d8:       02010113                addi    sp,sp,32
    101dc:       00008067                ret
 </pre>
-       <p>23 instructions for O1</p>
-                       <br>
-    <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_factorial.png",alt=Debug O1>
-                       <br><br>
-    <b>Debugging fact.o for Ofast</b>
-       <pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
+<p>23 instructions for O1</p>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_factorial.png",alt=Debug O1>
+<br><br>
+<b>Debugging fact.o for Ofast</b>
+<pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
 spike -d pk fact.o</code></p></pre>
-       <b>Ofast assembly output</b>  
-       <pre>00000000000100b0 &ltmain&gt:
+<b>Ofast assembly output</b>  
+<pre>00000000000100b0 &ltmain&gt:
    100b0:       00376637                lui     a2,0x376
    100b4:       00021537                lui     a0,0x21
    100b8:       ff010113                addi    sp,sp,-16
@@ -194,11 +194,11 @@ spike -d pk fact.o</code></p></pre>
    100d8:       01010113                addi    sp,sp,16
    100dc:       00008067                ret
 </pre>
-       <p>12 instructions for Ofast</p>
-       <br>
-       <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_factorial.png",alt=Ofast debug>
-       <br><br>
-       </details>
+<p>12 instructions for Ofast</p>
+<br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_factorial.png",alt=Ofast debug>
+<br><br>
+</details>
 </details>
 <hr>
 <!--End of Task 2-->
