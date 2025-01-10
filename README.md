@@ -4,7 +4,7 @@
 <br>
 <b>College:</b> Dayananda Sagar College Of Engineering
 <br>
-<b>Email:</b> <a href="tallurakshaykumar@gmail.com">tallurakshaykumar@gmail.com</a>
+<b>Email:</b> <a href="mailto:tallurakshaykumar@gmail.com">tallurakshaykumar@gmail.com</a>
 <br>
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a>
 <hr>
