@@ -68,7 +68,7 @@ return 0;
                                          <!-- Spike for Sum1ton -->				
 <details>
 <p><summary>
-<b>Task 2:</b> Running the SPIKE Simulation adn observe the performance under the -O1 and -Ofast Compiler optimization flags.
+<b>Task 2:</b> Running the SPIKE Simulation and observe the performance under the -O1 and -Ofast Compiler optimization flags.
 </summary></p>
 <details>
 <p><summary>1. Sum of Integers from 1 to n</summary></p>
