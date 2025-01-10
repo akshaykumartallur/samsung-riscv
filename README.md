@@ -8,7 +8,7 @@
 <br>
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a>
 <hr>
-<!-- Task 1 -->
+                                                  <!-- Task 1 -->				  
 <details>
 <p><summary>
 <b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISV to get the         corresponding assembly instructions for O1 and Ofast
@@ -60,10 +60,10 @@ return 0;
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/Ofast_output.png"  alt=Ofast output>
 <br><br>
 </details>
-<hr>
-<!--End of Task 1-->
-<!-- Task 2 -->
-<!-- Spike for Sum1ton -->
+<hr>  
+				           <!--End of Task 1-->
+                                               <!-- Task 2 -->
+                                         <!-- Spike for Sum1ton -->				
 <details>
 <p><summary>
 <b>Task 2:</b> Debugging Using Spike Optimization 
@@ -119,7 +119,8 @@ spike -d pk sum1ton.o</code></p></pre>
 <p>12 instructions for Ofast</p>
 <br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_Ofast_sum1ton.png" alt=debugging Ofast>
-</details>
+</details>	   
+                                             <!-- Spike for fact -->	   
 <details>
 <p><summary>2. Factorial of a Number</summary></p>
 <b>Compiling Factorial C program</b>
@@ -200,5 +201,5 @@ spike -d pk fact.o</code></p></pre>
 <br><br>
 </details>
 </details>
-<hr>
-<!--End of Task 2-->
+<hr>   
+                                              <!--End of Task 2-->
