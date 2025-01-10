@@ -1,3 +1,5 @@
+<html>
+	<body>
 <h1>samsung-riscv</h1>
 <h2>Basic Details</h2>
 <b>Name:</b> Akshaykumar Tallur
@@ -83,11 +85,11 @@ spike -d pk sum1ton.o</code></p></pre>
    10190:       fff7879b                addiw   a5,a5,-1
    10194:       fe079ee3                bnez    a5,10190 &ltmain+0xc&gt
    10198:       0007a637                lui     a2,0x7a
-   1019c:       31460613                addi    a2,a2,788 # 7a314 <__BSS_END__+0x5710c>
+   1019c:       31460613                addi    a2,a2,788 # 7a314 &lt;__BSS_END__+0x5710c&gt;
    101a0:       3e800593                li      a1,1000
    101a4:       00021537                lui     a0,0x21
-   101a8:       19050513                addi    a0,a0,400 # 21190 <__clzdi2+0x48>
-   101ac:       26c000ef                jal     ra,10418 &ltprintf&gt
+   101a8:       19050513                addi    a0,a0,400 # 21190 &lt;__clzdi2+0x48&gt;
+   101ac:       26c000ef                jal     ra,10418 &lt;printf&gt;
    101b0:       00000513                li      a0,0
    101b4:       00813083                ld      ra,8(sp)
    101b8:       01010113                addi    sp,sp,16
@@ -106,11 +108,11 @@ spike -d pk sum1ton.o</code></p></pre>
    100b0:       0007a637                lui     a2,0x7a
    100b4:       00021537                lui     a0,0x21
    100b8:       ff010113                addi    sp,sp,-16
-   100bc:       31460613                addi    a2,a2,788 # 7a314 &lt__BSS_END__+0x5710c&gt
+   100bc:       31460613                addi    a2,a2,788 # 7a314 &lt;__BSS_END__+0x5710c&gt;
    100c0:       3e800593                li      a1,1000
-   100c4:       18050513                addi    a0,a0,384 # 21180 <__clzdi2+0x44>
+   100c4:       18050513                addi    a0,a0,384 # 21180 &lt;__clzdi2+0x44&gt;
    100c8:       00113423                sd      ra,8(sp)
-   100cc:       340000ef                jal     ra,1040c &ltprintf&gt
+   100cc:       340000ef                jal     ra,1040c &lt;printf&gt;
    100d0:       00813083                ld      ra,8(sp)
    100d4:       00000513                li      a0,0
    100d8:       01010113                addi    sp,sp,16
@@ -156,15 +158,15 @@ spike -d pk fact.o</code></p></pre>
    10198:       00100413                li      s0,1
    1019c:       00b00493                li      s1,11
    101a0:       00040513                mv      a0,s0
-   101a4:       03c000ef                jal     ra,101e0 &lt__muldi3&gt
+   101a4:       03c000ef                jal     ra,101e0 &lt;__muldi3&gt;
    101a8:       0005059b                sext.w  a1,a0
    101ac:       0014041b                addiw   s0,s0,1
-   101b0:       fe9418e3                bne     s0,s1,101a0 &ltmain+0x1c&gt
+   101b0:       fe9418e3                bne     s0,s1,101a0 &lt;main+0x1c&gt;
    101b4:       00058613                mv      a2,a1
    101b8:       00a00593                li      a1,10
    101bc:       00021537                lui     a0,0x21
    101c0:       1b050513                addi    a0,a0,432 # 211b0 <__clzdi2+0x48>
-   101c4:       298000ef                jal     ra,1045c &ltprintf&gt
+   101c4:       298000ef                jal     ra,1045c &lt;printf&gt;
    101c8:       00000513                li      a0,0
    101cc:       01813083                ld      ra,24(sp)
    101d0:       01013403                ld      s0,16(sp)
@@ -185,11 +187,11 @@ spike -d pk fact.o</code></p></pre>
    100b0:       00376637                lui     a2,0x376
    100b4:       00021537                lui     a0,0x21
    100b8:       ff010113                addi    sp,sp,-16
-   100bc:       f0060613                addi    a2,a2,-256 # 375f00 <__BSS_END__+0x352cf8>
+   100bc:       f0060613                addi    a2,a2,-256 # 375f00 &lt;__BSS_END__+0x352cf8&gt;
    100c0:       00a00593                li      a1,10
-   100c4:       18050513                addi    a0,a0,384 # 21180 <__clzdi2+0x44>
+   100c4:       18050513                addi    a0,a0,384 # 21180 &lt;__clzdi2+0x44&gt;
    100c8:       00113423                sd      ra,8(sp)
-   100cc:       340000ef                jal     ra,1040c &ltprintf&gt
+   100cc:       340000ef                jal     ra,1040c &lt;printf&gt;
    100d0:       00813083                ld      ra,8(sp)
    100d4:       00000513                li      a0,0
    100d8:       01010113                addi    sp,sp,16
@@ -203,3 +205,5 @@ spike -d pk fact.o</code></p></pre>
 </details>
 <hr>   
                                               <!--End of Task 2-->
+   </body>
+</html>
