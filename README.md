@@ -21,11 +21,10 @@
 <br><br>
 <b>2. Compiling C code</b>
 <br><br>
-<pre>
-cd
+<pre><code>cd
 gedit sum1ton.c
 gcc sum1ton.c
-./a.out</pre>
+./a.out</code></pre>
 <pre>#include&ltstdio.h&gt
 int main(){
 		int i, sum=0, n=1000;
@@ -100,9 +99,9 @@ spike -d pk sum1ton.o</code></pre>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_sum1ton.png" alt=debugging O1>
 <br><br>
 <b>Debugging sum1ton.o for Ofast</b>
-<pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+<pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 spike pk sum1ton.o
-spike -d pk sum1ton.o</code></p></pre>
+spike -d pk sum1ton.o</code></pre>
 <b>Ofast assembly output</b>
 <pre>00000000000100b0 &ltmain&gt:
    100b0:       0007a637                lui     a2,0x7a
@@ -145,9 +144,9 @@ int main(){
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Factorial%20Compilation.png", alt=Factorial Compilation>
 <br><br>
 <b>Debugging fact.o for O1</b>
-<pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
+<pre><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
-spike -d pk fact.o</code></p></pre>
+spike -d pk fact.o</code></pre>
 <b>O1 assembly output</b>
 <pre>0000000000010184 &ltmain&gt:
    10184:       fe010113                addi    sp,sp,-32
@@ -179,9 +178,9 @@ spike -d pk fact.o</code></p></pre>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_factorial.png",alt=Debug O1>
 <br><br>
 <b>Debugging fact.o for Ofast</b>
-<pre><p><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
+<pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
-spike -d pk fact.o</code></p></pre>
+spike -d pk fact.o</code></pre>
 <b>Ofast assembly output</b>  
 <pre>00000000000100b0 &ltmain&gt:
    100b0:       00376637                lui     a2,0x376
