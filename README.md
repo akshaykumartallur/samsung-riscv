@@ -21,11 +21,11 @@
 <br><br>
 <b>2. Compiling C code</b>
 <br><br>
-<pre><code>
+<pre>
 cd
 gedit sum1ton.c
 gcc sum1ton.c
-./a.out</code></pre>
+./a.out</pre>
 <pre>#include&ltstdio.h&gt
 int main(){
 		int i, sum=0, n=1000;
@@ -73,10 +73,10 @@ return 0;
 <details>
 <p><summary>1. Sum of Integers from 1 to n</summary></p>
 <b>Debugging sum1ton.o for O1</b>
-<pre><p><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+<pre><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ls -ltr sum1ton.o
 spike pk sum1ton.o
-spike -d pk sum1ton.o</code></p></pre>
+spike -d pk sum1ton.o</code></pre>
 <b>O1 assembly output</b>
 <pre>0000000000010184 &ltmain&gt:
    10184:       ff010113                addi    sp,sp,-16
