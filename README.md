@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <body>
 <h1>samsung-riscv</h1>
 <h2>Basic Details</h2>
