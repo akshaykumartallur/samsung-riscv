@@ -28,7 +28,7 @@ gcc sum1ton.c
 <pre>#include&ltstdio.h&gt
 int main(){
 		int i, sum=0, n=1000;
-			for (i=1;i<=n;++i){
+			for (i=1;i&lt;=n;++i){
 				sum+=i;	}
 		printf("Sum of Numbers from 1 to %d is %d\n",n,sum);
 return 0;
@@ -133,7 +133,7 @@ int main(){
                int fact = 1;
                int i = 1;
                int n = 10;
-                   while(i<=n){
+                   while(i&lt;=n){
                        fact*=i;
                        ++i;
                        }
