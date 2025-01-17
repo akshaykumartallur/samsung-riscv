@@ -641,6 +641,76 @@ spike -d pk fact.o</code></pre>
 	</tr>
 </table>
 
+<!-- 8 -->
+
+<h3>8. Machine code for <code>mv a0, s0</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>mv a0, s0</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0010011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>s0 (x8,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a0 (x10,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(1): </b><code>000000001011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(s0=x8): </b><code>01000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a0=x10): </b><code>01010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0010011</code> <br><br>
+<pre><code>101a0:       00040513            mv    a0, s0</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000000000</td>
+		<td>01000</td>
+		<td>000</td>
+		<td>01010</td>
+		<td>0010011</td>
+	</tr>
+</table>
+
+<!-- 9 -->
+
+<h3>9. Machine code for <code>sext.w a1, a0</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>sext.w a1, a0</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0011011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>a0 (x10,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a1 (x11,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(1): </b><code>000000000000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(a0=x10): </b><code>01010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a1=x11): </b><code>01011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0011011</code> <br><br>
+<pre><code>101a8:       0005059b          sext.w  a1, a0 </code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000000000</td>
+		<td>01010</td>
+		<td>000</td>
+		<td>01011</td>
+		<td>0011011</td>
+	</tr>
+</table>
+
+
+
 
 
 </details>
