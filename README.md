@@ -746,10 +746,10 @@ spike -d pk fact.o</code></pre>
 <!-- 11 -->
 
 <h3>11. Machine code for <code>lui a0, 0x21</code></h3>
-<b>&nbsp;&nbsp;Instruction: </b><code>addiw s0, s0, 1</code>  <br><br>
+<b>&nbsp;&nbsp;Instruction: </b><code>lui a0, 0x21</code>  <br><br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0110111 (7 bits) <br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0x21(33) (20 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a0 (x10,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a0 (x10,5 bits) <br><br>
 <b>&nbsp;&nbsp;Breakdown:</b><br><br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(0x21): </b><code>00000000000000100001</code> <br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a0=x10): </b><code>01010</code> <br>
