@@ -415,32 +415,41 @@ spike -d pk fact.o</code></pre>
 <h3>2. Machine code for <code>sd ra, 24(sp)</code></h3>
 	<b>&nbsp;&nbsp;Instruction: </b><code>sd ra, 24(sp)</code>  <br><br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0100011(7 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>24 (12 bits ) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>sp(x2,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>sp(x2,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000(3 bits) <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>24 (12 bits split into imm[11:5] and imm[4:0]) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Base Register(rs1): </b>sp(x2,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rd): </b>ra(x1,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>011(3 bits) <br><br>
 <b>Breakdown:</b><br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(-32):</b><code>111111100000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(24):</b><code>000000011000 </code>(Split into imm[11:5]=<code>0000000</code> and 		imm[4:0]=<code>11000</code><br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(sp=x2): </b><code>00010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0010011</code> <br><br>
-<pre><code>10184:       fe010113                addi    sp,sp,-32</code></pre>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2(ra=x1): </b><code>00001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0100011</code> <br><br>
+ <b>Binary Representation:</b><br><br>
+ 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm[11:5] (7 bits): </b><code>0000000</code><br>
+  	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2 (5 bits): </b><code>00001</code><br>
+   	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1 (5 bits): </b><code>00010</code><br>
+    	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3 (3 bits): </b><code>011</code><br>
+     	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm[4:0] (5 bits): </b><code>11000</code><br>
+      	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode (7 bits): </b><code></code><br><br>
+<pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>
 	   
 <table>
 	<tr>
-		<th>Immediate (12 bits)</th>
+		<th>Imm[11:5] (7 bits)</th>
+		<th>rs2 (5 bits)</th>
 		<th>rs1 (5 bits)</th>
 		<th>funct3 (3 bits)</th>
-		<th>rd (5 bits)</th>
+		<th>imm[4:0] (5 bits)</th>
 		<th>Opcode (7 bits)</th>
 	</tr>
 	<tr>
-		<td>111111100000</td>
+		<td>0000000</td>
+		<td>00001</td>
 		<td>00010</td>
-		<td>000</td>
-		<td>00010</td>
-		<td>0010011</td>
+		<td>011</td>
+		<td>11000</td>
+		<td>0100011</td>
 	</tr>
 </table>
 
@@ -449,5 +458,7 @@ spike -d pk fact.o</code></pre>
 
 </details>
 </details>
+<hr>
+<!--End of Task 3-->
 </body>
 </html>
