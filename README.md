@@ -204,5 +204,88 @@ spike -d pk fact.o</code></pre>
 </details>
 <hr>   
                                               <!--End of Task 2-->
-   </body>
+	                                        <!-- Task 3 -->   
+<details>
+	<summary><b>Task 3:</b> Identify instruction type of all the instructions of the Object dump with its exact 32 bits instruction code in the desired instruction type format</summary>
+<h2>Instruction Types and Fields</h2>
+<p> The RISC-V instructions are categorized into types based on their filed organization.Each type has specific fields like opcode,funct3,funct4,immediate values and register numbers. The types include:</p>
+<b>&#183; R-Type:</b> Register Type <br>
+<b>&#183; I-Type:</b> Immediate Type <br>
+<b>&#183; S-Type:</b> Store Type <br>
+<b>&#183; B-Type:</b> Branch Type <br>
+<b>&#183; U-Type:</b> Upper Immediate Type <br>
+<b>&#183; J-Type:</b> Jump Type <br>
+<h3>RISCV R-Type Instructions</h3>
+<p>R-type instructions are used for operations that involve only registers. These instructions typically perform arithmetic, logical, and shift operations.</p>
+<b>Format:</b><br>
+<pre>
++----------------------------------------------------------------------------------------------------------------------------------+
+  funct7[31:25](7-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
++----------------------------------------------------------------------------------------------------------------------------------+
+</pre>
+<b>&#183; funct7:</b> Further specifies the operation.<br>
+<b>&#183; rs2:</b> Second source register.<br>
+<b>&#183; rs1:</b> First source register.<br>
+<b>&#183; funct3:</b> Further specifies the operation.<br>
+<b>&#183; rd:</b> Destination register.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+<h3>RISCV I-Type Instructions</h3>
+<p>I-Type instructions cover various operations, including immediate arithmetic, load operations, and certain control flow instructions.</p>
+<b>Format:</b><br>
+<pre>
++----------------------------------------------------------------------------------------------------------+
+  imm[31:20](12-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
++----------------------------------------------------------------------------------------------------------+</pre>
+<b>&#183; imm:</b> Immediate Value.<br>
+<b>&#183; rs1:</b> First source register.<br>
+<b>&#183; funct3:</b> Further specifies the operation.<br>
+<b>&#183; rd:</b> Destination register.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+<h3>RISCV S-Type Instructions</h3>
+<p>S-type instructions are essential for accessing and manipulating data in memory.Used to store data from a register to memory.</p>
+<b>Format:</b><br>
+<pre>
++--------------------------------------------------------------------------------------------------------------------------------------------+
+  imm[31:25](11:5)(7-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | imm[11:7](4:0)(5-bits) | opcode[6:0](7-bits)
++--------------------------------------------------------------------------------------------------------------------------------------------+</pre>
+<b>&#183; imm:</b> Immediate Value( split into imm[11:5] and imm[4:0]).<br>
+<b>&#183; rs2:</b> Second source register.<br>
+<b>&#183; rs1:</b> First source register.<br>
+<b>&#183; funct3:</b> Further specifies the operation.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+<h3>RISCV B-Type Instructions</h3>
+<p>B-type instructions are crucial for implementing control flow in programs, enabling conditional execution of code blocks.Used for conditional branches, which alter the program flow based on a comparison of register values.</p>
+<b>Format:</b><br>
+<pre>
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+  imm[31](12)(1-bit) | imm[30:25](10:5)(6-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | imm[11:8](4:1)(4-bits) | imm[7](11)(1-bit) | opcode[6:0](7-bits)
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
+<b>&#183; imm:</b> Immediate Value( split into imm[12], imm[10:5], imm[4:1] and imm[11]).<br>
+<b>&#183; rs2:</b> Second source register.<br>
+<b>&#183; rs1:</b> First source register.<br>
+<b>&#183; funct3:</b> Further specifies the operation.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+<h3>RISCV U-Type Instructions</h3>
+<p>U-Type instructions are used for operations like loading upper immediate (LUI) and adding upper immediate to PC (AUIPC).</p>
+<b>Format:</b><br>
+<pre>
++----------------------------------------------------------------------------------------------------------+
+                  imm[31:12](20-bits)                |    rd[11:7](5-bits)      |     opcode[6:0](7-bits)
++----------------------------------------------------------------------------------------------------------+</pre>
+<b>&#183; imm:</b> Upper 20 bits of the immediate value.<br>
+<b>&#183; rd:</b> Destination register.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+<h3>RISCV J-Type Instructions</h3>
+<p>J-type instructions in RISC-V are primarily used for unconditional jumps to specific target addresses within the program.They play a crucial role in controlling the flow of execution by transferring control to a different part of the code.</p>
+<b>Format:</b><br>
+<pre>
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+  imm[31](20)(1-bit) | imm[30:21](10:1)(10-bits) | imm[20](11)(1-bit) | imm[19:12](19:12)(8-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
+<b>&#183; imm:</b> Immediate Value( split into imm[20], imm[10:1], imm[11] and imm[19:12]).<br>
+<b>&#183; rd:</b> Destination register.<br>
+<b>&#183; opcode:</b> Specifies the operation.<br>
+
+</details>
+</body>
 </html>
