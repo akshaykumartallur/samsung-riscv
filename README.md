@@ -771,41 +771,143 @@ spike -d pk fact.o</code></pre>
 
 <!-- 12 -->
 
-<h3>12. Machine code for <code>lui a0, 0x21</code></h3>
-<b>&nbsp;&nbsp;Instruction: </b><code>lui a0, 0x21</code>  <br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0110111 (7 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0x21(33) (20 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a0 (x10,5 bits) <br><br>
+<h3>12. Machine code for <code>ld ra, 24(sp)</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>ld ra, 24(sp)</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0000011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>24 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>sp (x2,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>ra (x1,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>011 (3 bits) <br><br>
 <b>&nbsp;&nbsp;Breakdown:</b><br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(0x21): </b><code>00000000000000100001</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a0=x10): </b><code>01010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0110111</code> <br><br>
-<pre><code>101bc:       00021537          lui  a0, 0x21</code></pre>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(24): </b><code>000000011000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(ra=x1): </b><code>00001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0000011</code> <br><br>
+<pre><code>101cc:       01813083          ld   ra, 24(sp)</code></pre>
 	   
 <table>
 	<tr>
-		<th>Immediate (20 bits)</th>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
 		<th>rd (5 bits)</th>
 		<th>Opcode (7 bits)</th>
 	</tr>
 	<tr>
-		<td>00000000000000100001</td>
-		<td>01010</td>
-		<td>0110111</td>
+		<td>000000011000</td>
+		<td>00010</td>
+		<td>011</td>
+		<td>00001</td>
+		<td>0000011</td>
 	</tr>
 </table>
 
+<!-- 13 -->
 
+<h3>13. Machine code for <code>ld s0, 16(sp)</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>ld s0, 16(sp)</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0000011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>16 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>sp (x2,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>s0 (x8,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>011 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(16): </b><code>000000010000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(s0=x8): </b><code>01000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0000011</code> <br><br>
+<pre><code>101d0:       01013403          ld   s0, 16(sp)</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000010000</td>
+		<td>00010</td>
+		<td>011</td>
+		<td>01000</td>
+		<td>0000011</td>
+	</tr>
+</table>
 
+<!-- 14 -->
 
+<h3>14. Machine code for <code>ld s1, 8(sp)</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>ld s1, 8(sp)</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0000011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>8 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>sp (x2,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>s1 (x9,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>011 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(8): </b><code>000000001000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(s1=x9): </b><code>01001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0000011</code> <br><br>
+<pre><code>101d4:       00813483          ld   s1, 8(sp)</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000001000</td>
+		<td>00010</td>
+		<td>011</td>
+		<td>01001</td>
+		<td>0000011</td>
+	</tr>
+</table>
 
+<!-- 15 -->
 
-
-
-
+<h3>15. Machine code for <code>ret</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>ret</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>1100111 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>ra (x1,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>zero (x0,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(1): </b><code>000000001011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(ra=x1): </b><code>00001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(zero=x0): </b><code>00000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>1100111</code> <br><br>
+<pre><code>101dc:       00008067       ret</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000000000</td>
+		<td>00001</td>
+		<td>000</td>
+		<td>00000</td>
+		<td>1100111</td>
+	</tr>
+</table>
 </details>
 </details>
 <hr>
 <!--End of Task 3-->
+
 </body>
 </html>
