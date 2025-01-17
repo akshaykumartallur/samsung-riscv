@@ -743,6 +743,36 @@ spike -d pk fact.o</code></pre>
 	</tr>
 </table>
 
+<!-- 11 -->
+
+<h3>11. Machine code for <code>lui a0, 0x21</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>addiw s0, s0, 1</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0110111 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>0x21(33) (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a0 (x10,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(0x21): </b><code>00000000000000100001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a0=x10): </b><code>01010</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0110111</code> <br><br>
+<pre><code>101bc:       00021537          lui  a0, 0x21</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (20 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>00000000000000100001</td>
+		<td>01010</td>
+		<td>0110111</td>
+	</tr>
+</table>
+
+
+
 
 
 
