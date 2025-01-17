@@ -539,6 +539,40 @@ spike -d pk fact.o</code></pre>
 	</tr>
 </table>
 
+<!-- 5 -->
+
+<h3>5. Machine code for <code>li a1, 1</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>li a1, 1</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0010011(7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>1 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>zero(x0,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>a1(x11,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000(3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(1):</b><code>000000000001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(zero=x0): </b><code>00000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(a1=x11): </b><code>01011</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0010011</code> <br><br>
+<pre><code>10194:       00100593          li    a1, 1</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000000001</td>
+		<td>00000</td>
+		<td>000</td>
+		<td>01011</td>
+		<td>0010011</td>
+	</tr>
+</table>
+
 
 
 
