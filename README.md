@@ -10,6 +10,7 @@
 <br>
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a>
 <hr>
+	<a href="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201.md">Task 1</a>
 <!-- Task 1 -->				  
 <details>
 <p><summary>
