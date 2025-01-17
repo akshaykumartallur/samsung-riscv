@@ -709,6 +709,41 @@ spike -d pk fact.o</code></pre>
 	</tr>
 </table>
 
+<!-- 10 -->
+
+<h3>10. Machine code for <code>addiw s0, s0, 1</code></h3>
+<b>&nbsp;&nbsp;Instruction: </b><code>addiw s0, s0, 1</code>  <br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0011011 (7 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>1 (12 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>s0 (x8,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>s0 (x8,5 bits) <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(1): </b><code>000000000001</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(s0=x8): </b><code>01000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(s0=x8): </b><code>01000</code> <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0011011</code> <br><br>
+<pre><code>v101ac:       0014041b          addiw   s0, s0, 1</code></pre>
+	   
+<table>
+	<tr>
+		<th>Immediate (12 bits)</th>
+		<th>rs1 (5 bits)</th>
+		<th>funct3 (3 bits)</th>
+		<th>rd (5 bits)</th>
+		<th>Opcode (7 bits)</th>
+	</tr>
+	<tr>
+		<td>000000000001</td>
+		<td>01000</td>
+		<td>000</td>
+		<td>01000</td>
+		<td>0011011</td>
+	</tr>
+</table>
+
+
 
 
 
