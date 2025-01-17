@@ -724,7 +724,7 @@ spike -d pk fact.o</code></pre>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(s0=x8): </b><code>01000</code> <br>
 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0011011</code> <br><br>
-<pre><code>v101ac:       0014041b          addiw   s0, s0, 1</code></pre>
+<pre><code>101ac:       0014041b          addiw   s0, s0, 1</code></pre>
 	   
 <table>
 	<tr>
