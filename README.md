@@ -7,9 +7,9 @@
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a><hr>
 <!-- Task 1 -->				  
 <details><p><summary><b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISV to get the corresponding assembly instructions for O1 and Ofast.</summary></p>
-<b>1. Install Ubuntu 18.04 LTS on Oracle Virtual Machine Box and open VDI file provided</b><br><br>
+<h3>1. Install Ubuntu 18.04 LTS on Oracle Virtual Machine Box and open VDI file provided</h3><br><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/VM_box.png"  alt=Virtual     Machine><br><br>
-<b>2. Compiling C code</b><br><br>
+<h3>2. Compiling C code</h3><br><br>
 <pre><code>cd
 gedit sum1ton.c
 gcc sum1ton.c
@@ -24,7 +24,7 @@ return 0;
 	}</pre><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/C_code.png"  alt=C code><br><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/output_of_c_code.png"      alt=commands for c compilation><br><br>
-<b>3. Object Dump and O1, Ofast Output</b><br><br>
+<h3>3. Object Dump and O1, Ofast Output</h3><br><br>
 <pre><code>
     cat sum1ton.c
     riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
@@ -45,7 +45,7 @@ return 0;
 <b>Task 2:</b> Running the SPIKE Simulation and observe the performance under the -O1 and -Ofast Compiler optimization flags.
 </summary></p><details>
 <p><summary>1. Sum of Integers from 1 to n</summary></p>
-<b>Debugging sum1ton.o for O1</b>
+<h3>Debugging sum1ton.o for O1</h3>
 <pre><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ls -ltr sum1ton.o
 spike pk sum1ton.o
@@ -69,7 +69,7 @@ spike -d pk sum1ton.o</code></pre>
    101bc:       00008067                ret</pre>
 <p>15 instructions for O1</p><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_sum1ton.png" alt=debugging O1><br><br>
-<b>Debugging sum1ton.o for Ofast</b>
+<h3>Debugging sum1ton.o for Ofast</h3>
 <pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 spike pk sum1ton.o
 spike -d pk sum1ton.o</code></pre>
@@ -93,7 +93,7 @@ spike -d pk sum1ton.o</code></pre>
 <!-- Spike for fact -->	   
 <details>
 <p><summary>2. Factorial of a Number</summary></p>
-<b>Compiling Factorial C program</b>
+<h3>Compiling Factorial C program</h3>
 <pre><code>gedit fact.c
 gcc fact.c
 ./a.out</code></pre>
@@ -110,7 +110,7 @@ int main(){
         return 0;
                        }</pre>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Factorial%20Compilation.png", alt=Factorial Compilation><br><br>
-<b>Debugging fact.o for O1</b>
+<h3>Debugging fact.o for O1</h3>
 <pre><code>riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
 spike -d pk fact.o</code></pre>
@@ -141,7 +141,7 @@ spike -d pk fact.o</code></pre>
    101dc:       00008067                ret</pre>
 <p>23 instructions for O1</p><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%202/Spike_O1_factorial.png",alt=Debug O1><br><br>
-<b>Debugging fact.o for Ofast</b>
+<h3>Debugging fact.o for Ofast</h3>
 <pre><code>riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o fact.o fact.c
 spike pk fact.o
 spike -d pk fact.o</code></pre>
