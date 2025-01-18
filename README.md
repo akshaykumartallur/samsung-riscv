@@ -248,7 +248,7 @@ spike -d pk fact.o</code></pre>
 <b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br></details>
 <!-- Machine Codes -->
 <details><p><summary>Machine Codes for Different Instructions</summary></p>
-<h3>Machine Codes:</h3>
+<h2>Machine Codes:</h2>
 <pre>0000000000010184 &ltmain&gt:
    10184:       fe010113                addi    sp,sp,-32
    10188:       00113c23                sd      ra,24(sp)
