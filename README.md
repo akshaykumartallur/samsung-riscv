@@ -761,5 +761,48 @@ spike -d pk fact.o</code></pre>
 </details>
 <hr>
 <!--End of Task 3-->
+<!-- Task 4 -->
+<details><summary><b>Task 4: </b>By using RISC-V Core: Verilog netlist and Testbench, perform an experiment of Functional Simulation using GTKWave and Observe the waveforms.</summary>
+<h4>Installing iverilog and GTKWave in Ubuntu:</h4>
+<pre><code>sudo apt install iverilog gtkwave</code></pre>
+<h3>Simulate and run the verilog code</h3>
+<pre><code>iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+./iiitb_rv32i
+gtkwave iiitb_rv32i.vcd</code></pre>
+<h4>GTKWave Window:</h4><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/GTKWave_Window.png" alt="GTKWave Window">
+<br><br>
+<h4>Hardcoded Instructions:</h4><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/Instructions.png" alt="Hardcoded ISA">
+<br>
+<h3>Ouput Waveforms:</h3>
+<b><i>Instruction 1:</i></b><pre> ADD R6, R2, R1</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/01_add_r6_r1_r2.png" alt="ADD R6, R2, R1">
+<br><br><b><i>Instruction 2:</i></b><pre> SUB R7, R1, R2</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/02_sub_r7_r1_r2.png" alt="SUB R7, R1, R2">
+<br><br><b><i>Instruction 3:</i></b><pre> AND R8, R1, R3</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/03_and_r8%2Cr1%2Cr3.png" alt="AND R8, R1, R3">
+<br><br><b><i>Instruction 4:</i></b><pre> OR R9, R2, R5</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/04_or_r9_r2_r5.png" alt="OR R9, R2, R5">
+<br><br><b><i>Instruction 5:</i></b><pre> XOR R10, R1, R4</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/05_xor_r10_r1_r4.png" alt="XOR R10, R1, R4">
+<br><br><b><i>Instruction 6:</i></b><pre> SLT R11, R2, R4</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/06_slt_r11_r2_r4.png" alt="SLT R11, R2, R4">
+<br><br><b><i>Instruction 7:</i></b><pre> ADDI R12, R4, 5</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/07_addi_r12_r4_5.png" alt="ADDI R12, R4, 5">
+<br><br><b><i>Instruction 8:</i></b><pre> SW R3, R1, 2</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/08_sw_r3_r1_2.png" alt="SW R3, R1, 2">
+<br><br><b><i>Instruction 9:</i></b><pre> LW R13, R1, 2</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/09_lw_r13_r1_2.png" alt="LW R13, R1, 2">
+<br><br><b><i>Instruction 10:</i></b><pre> BEQ R0, R0, 15</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/10_beq_r0_r0_15.png" alt="BEQ R0, R0, 15">
+<br><br><b><i>Instruction 11:</i></b><pre> ADD R14, R2 R2</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/11_add_r14_r2_r2.png" alt="ADD R14, R2 R2">
+<br><br><b><i>Instruction 12:</i></b><pre> BNE R0, R1, 20</pre><br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/12_bne_r0_r1_20.png" alt="BNE R0, R1, 20">
+<br><br>
+</details>
+<!--End of Task 4-->
+<hr>
 </body>
 </html>
