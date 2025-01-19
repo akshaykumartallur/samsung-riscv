@@ -763,6 +763,10 @@ spike -d pk fact.o</code></pre>
 <!--End of Task 3-->
 <!-- Task 4 -->
 <details><summary><b>Task 4: </b>By using RISC-V Core: Verilog netlist and Testbench, perform an experiment of Functional Simulation using GTKWave and Observe the waveforms.</summary>
+<h3>Steps:</h3>
+1. Using suitable commands install the iverilog and GTKWave in ubuntu<br>
+2. Compile the RISC-V Core: Verilog netlist and Testbench<br>
+3. Observe the waveform output in GTKWave window<br>
 <h4>Installing iverilog and GTKWave in Ubuntu:</h4>
 <pre><code>sudo apt install iverilog gtkwave</code></pre>
 <h3>Simulate and run the verilog code</h3>
@@ -777,40 +781,40 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <br>
 <h3>Ouput Waveforms:</h3>
 <b><i>Instruction 1:</i></b><pre> ADD R6, R2, R1</pre>
-	<p><b>ADD R6, R2, R1: </b>This instruction Adds values of registers R2 and R1 and stores the result in register R6, In this case 1 + 2 = 3.</p>
+	<p>This instruction Adds values of registers R2 and R1 and stores the result in register R6, In this case 1 + 2 = 3.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/01_add_r6_r1_r2.png" alt="ADD R6, R2, R1">
 <br><br><b><i>Instruction 2:</i></b><pre> SUB R7, R1, R2</pre>
-	<p><b>SUB R7, R1, R2: </b>This instruction subtracts value of register R2 from R1 and stores the result in register R7, In this case 1 - 2 = -1.</p>
+	<p>This instruction subtracts value of register R2 from R1 and stores the result in register R7, In this case 1 - 2 = -1.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/02_sub_r7_r1_r2.png" alt="SUB R7, R1, R2">
 <br><br><b><i>Instruction 3:</i></b><pre> AND R8, R1, R3</pre>
-	<p><b>AND R8, R1, R3: </b>This instruction executes bitwise "AND" between values of registers R1 and R3 and stores the result in register R8, In this case 01 & 11 = 01(1 in decimal).</p>
+	<p>This instruction executes bitwise "AND" between values of registers R1 and R3 and stores the result in register R8, In this case 01 & 11 = 01(1 in decimal).</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/03_and_r8%2Cr1%2Cr3.png" alt="AND R8, R1, R3">
 <br><br><b><i>Instruction 4:</i></b><pre> OR R9, R2, R5</pre>
-	<p><b>OR R9, R2, R5: </b>This instruction executes bitwise "OR" between values of registers R2 and R5 and stores the result in register R9, In this case 010 | 101 = 111(7 in decimal).</p>
+	<p>This instruction executes bitwise "OR" between values of registers R2 and R5 and stores the result in register R9, In this case 010 | 101 = 111(7 in decimal).</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/04_or_r9_r2_r5.png" alt="OR R9, R2, R5">
 <br><br><b><i>Instruction 5:</i></b><pre> XOR R10, R1, R4</pre>
-	<p><b>XOR R10, R1, R4: </b>This instruction executes bitwise XOR between values of registers R1 and R4 and stores the result in register R10, In this case 001 ^ 100 = 101(5 in decimal).</p>
+	<p>This instruction executes bitwise XOR between values of registers R1 and R4 and stores the result in register R10, In this case 001 ^ 100 = 101(5 in decimal).</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/05_xor_r10_r1_r4.png" alt="XOR R10, R1, R4">
 <br><br><b><i>Instruction 6:</i></b><pre> SLT R11, R2, R4</pre>
-	<p><b>SLT R11, R2, R4: </b>This instruction checks the values of registers R2 and R4 if value of R2 is less than value of R4, then register R11 is set to 1, In this case 2<4 so R11 is set to 1.</p>
+	<p>This instruction checks the values of registers R2 and R4 if value of R2 is less than value of R4, then register R11 is set to 1, In this case 2<4 so R11 is set to 1.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/06_slt_r11_r2_r4.png" alt="SLT R11, R2, R4">
 <br><br><b><i>Instruction 7:</i></b><pre> ADDI R12, R4, 5</pre>
-	<p><b>ADDI R12, R4, 5: </b>This instruction adds the immediate data 5 to the value in register R4 and stores the result in register R12, In this case 4 + 5 = 9.</p>
+	<p>This instruction adds the immediate data 5 to the value in register R4 and stores the result in register R12, In this case 4 + 5 = 9.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/07_addi_r12_r4_5.png" alt="ADDI R12, R4, 5">
 <br><br><b><i>Instruction 8:</i></b><pre> SW R3, R1, 2</pre>
-	<p><b>SW R3, R1, 2: </b>This instruction stores the register data @R1+2 into the memory, In this case 1 + 2 = 3.</p>
+	<p>This instruction stores the register data @R1+2 into the memory, In this case 1 + 2 = 3.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/08_sw_r3_r1_2.png" alt="SW R3, R1, 2">
 <br><br><b><i>Instruction 9:</i></b><pre> LW R13, R1, 2</pre>
-	<p><b>LW R13, R1, 2: </b>This instruction loads the register data @R1+2 into the register R13, In this case 1 + 2 = 3.</p>
+	<p>This instruction loads the register data @R1+2 into the register R13, In this case 1 + 2 = 3.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/09_lw_r13_r1_2.png" alt="LW R13, R1, 2">
 <br><br><b><i>Instruction 10:</i></b><pre> BEQ R0, R0, 15</pre>
-	<p><b>BEQ R0, R0, 15: </b>This instruction Branches to 15 instructions ahead of current instruction if values of registers R0 equals R0, so Program Counter will be incremented by 15, In this case PC is 10 so new PC value will be 10+15=25.</p>
+	<p>This instruction Branches to 15 instructions ahead of current instruction if values of registers R0 equals R0, so Program Counter will be incremented by 15, In this case PC is 10 so new PC value will be 10+15=25.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/10_beq_r0_r0_15.png" alt="BEQ R0, R0, 15">
 <br><br><b><i>Instruction 11:</i></b><pre> ADD R14, R2 R2</pre>
-	<p><b>ADD R14, R2, R2:</b> This instruction Adds values of registers R2 and R2 and stores the result in register R14, In this case 2 + 2 = 4.</p>
+	<p> This instruction Adds values of registers R2 and R2 and stores the result in register R14, In this case 2 + 2 = 4.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/11_add_r14_r2_r2.png" alt="ADD R14, R2 R2">
 <br><br><b><i>Instruction 12:</i></b><pre> BNE R0, R1, 20</pre>
-	<p><b>BNE R0, R1, 20: </b>This instruction Branches to 20 instructions ahead of current instruction if values of registers R0 and R1 don't match , so Program Counter will be incremented by 20, In this case PC is 28 so new PC value will be 28+20=48.</p>
+	<p>This instruction Branches to 20 instructions ahead of current instruction if values of registers R0 and R1 don't match , so Program Counter will be incremented by 20, In this case PC is 28 so new PC value will be 28+20=48.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/12_bne_r0_r1_20.png" alt="BNE R0, R1, 20">
 <br><br>
 </details>
