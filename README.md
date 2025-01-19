@@ -810,7 +810,7 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	<p><b>ADD R14, R2, R2:</b> This instruction Adds values of registers R2 and R2 and stores the result in register R14, In this case 2 + 2 = 4.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/11_add_r14_r2_r2.png" alt="ADD R14, R2 R2">
 <br><br><b><i>Instruction 12:</i></b><pre> BNE R0, R1, 20</pre>
-	<p><b>BNE R0, R1, 20: </b>b>This instruction Branches to 20 instructions ahead of current instruction if values of registers R0 and R1 don't match , so Program Counter will be incremented by 20, In this case PC is 28 so new PC value will be 28+20=48.</p>
+	<p><b>BNE R0, R1, 20: </b>This instruction Branches to 20 instructions ahead of current instruction if values of registers R0 and R1 don't match , so Program Counter will be incremented by 20, In this case PC is 28 so new PC value will be 28+20=48.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/12_bne_r0_r1_20.png" alt="BNE R0, R1, 20">
 <br><br>
 </details>
