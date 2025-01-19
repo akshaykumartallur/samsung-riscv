@@ -816,6 +816,15 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <br><br><b><i>Instruction 12:</i></b><pre> BNE R0, R1, 20</pre>
 	<p>This instruction Branches to 20 instructions ahead of current instruction if values of registers R0 and R1 don't match , so Program Counter will be incremented by 20, In this case PC is 28 so new PC value will be 28+20=48.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/12_bne_r0_r1_20.png" alt="BNE R0, R1, 20">
+<br><br><b><i>Instruction 13:</i></b><pre> ADDI R12, R4, 5</pre>
+	<p>This instruction adds the immediate data 5 to the value in register R4 and stores the result in register R12, In this case 4 + 5 = 9.</p>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/13_addi_r12_r4_5.png" alt="ADDI R12, R4, 5">
+<br><br><b><i>Instruction 14:</i></b><pre> SLL R15, R1, R2</pre>
+	<p>This instruction shifts the value of register R1 to left by 2, (001)&lt;&lt;2=(100)4.</p>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/14_sll_r15_r1_r2.png" alt="SLL R15, R1, R2">
+<br><br><b><i>Instruction 15:</i></b><pre> SRL R16, R4, R2</pre>
+	<p>This instruction shifts the value of register R1 to right by 2, (100)&gt;&gt;2=(001)1.</p>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/15_srl_r16_r4_r2.png" alt="SRL R16, R4, R2">
 <br><br>
 </details>
 <!--End of Task 4-->
