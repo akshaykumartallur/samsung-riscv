@@ -780,6 +780,7 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/Instructions.png" alt="Hardcoded ISA">
 <br>
 <h3>Ouput Waveforms:</h3>
+<p>The output waveforms showing the instructions performed in a 5-stage pipelined architecture</p>
 <b><i>Instruction 1:</i></b><pre> ADD R6, R2, R1</pre>
 	<p>This instruction Adds values of registers R2 and R1 and stores the result in register R6, In this case 1 + 2 = 3.</p>
 	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/01_add_r6_r1_r2.png" alt="ADD R6, R2, R1">
