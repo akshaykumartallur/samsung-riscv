@@ -925,7 +925,5 @@ int main()
     return 0;
 }
 	</pre>
- <h3>Application Video Link</h3>
- <a href="">4_Bit_Binary_Counter</a>
 </details>
 <hr>
