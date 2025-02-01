@@ -1,4 +1,4 @@
-<html lang="en"><body>
+
 <h1>samsung-riscv</h1>
 <h2>Basic Details</h2>
 <b>Name:</b> Akshaykumar Tallur<br>
@@ -830,5 +830,3 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 </details>
 <!--End of Task 4-->
 <hr>
-</body>
-</html>
