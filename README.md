@@ -1,4 +1,3 @@
-
 <h1>samsung-riscv</h1>
 <h2>Basic Details</h2>
 <b>Name:</b> Akshaykumar Tallur<br>
@@ -829,4 +828,104 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <br><br>
 </details>
 <!--End of Task 4-->
+<hr>
+<!-- Task 5 -->
+<details>
+	<summary><b>Task 5:</b> To implement any digital circuit using VSDSquadron Mini and check whether building and uploading of C program file on RISCV processor works.</summary>
+<h2>Implement 4-Bit Binary Counter Using VSDSquadron Mini </h2>
+<h3>Overview</h3>
+	<p>This project involves the implementation of 4-bit binary up counter sequential circuit using VSD squadron mini, a RISCV based SoC development kit. A binary counter is a fundamental digital circuit that increments its value through a sequence of binary numbers. This project show cases the practical application of digital logic and RISC-V architecture by implementing a counting function. It involves reading and writing binary data through GPIO pins, implementing the 4-bit Counter logic, Simulating the design using PlatformIO IDE and displaying the counter's output using LEDs. This Project provides a hands-on understanding of how to control and manipulate digital signals using a micro-controller and how to implement a basic digital building block.</p>
+<h3>Components Required</h3>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> VSD Squadron Mini<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Push button for resetting the counter <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> 4 LEDs for Output <br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Bread Board<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Jumper wires<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> VS Code for software Development<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> PlatformIO multi framework professional IDE<br>
+<h3>Hardware Connections</h3>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> <b>Inputs: </b>One input connected to the GPIO Pins of VSDsquadron Mini via push button mounted on the breadboard.<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> <b>Outputs: </b> Four LEDs are connected to display the result of 4-bit binary counter.<br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> The GPIO pins are configured according to the reference mannual ensuring the correct flow of signals between the components.<br>
+<br>
+	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_bit_Binary_Counter_Circuit.png" alt="4-bit Binary Counter">
+<br><br>
+<h3>Truth Table for Binary Counter</h3>
+	<table>
+<!-- Row 01 -->    <tr>
+			<th>Q<sub>3</sub></th>
+			<th>Q<sub>2</sub></th>
+			<th>Q<sub>1</sub></th>
+			<th>Q<sub>0</sub></th>
+			<th>Decimal Value</th>
+		   </tr>
+<!-- Row 02 -->    <tr>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td align="center">0</td>	</tr>
+<!-- Row 03 -->    <tr>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td align="center">1</td>	</tr>
+<!-- Row 04 -->    <tr>	<td>0</td>	<td>0</td>	<td>1</td>	<td>0</td>	<td align="center">2</td>	</tr>
+<!-- Row 05 -->    <tr>	<td>0</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td align="center">3</td>	</tr>
+<!-- Row 06 -->    <tr>	<td>0</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td align="center">4</td>	</tr>
+<!-- Row 07 -->    <tr>	<td>0</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td align="center">5</td>	</tr>
+<!-- Row 08 -->    <tr>	<td>0</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td align="center">6</td>	</tr>
+<!-- Row 09 -->    <tr>	<td>0</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td align="center">7</td>	</tr>
+<!-- Row 10 -->    <tr>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td align="center">8</td>	</tr>
+<!-- Row 11 -->    <tr>	<td>1</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td align="center">9</td>	</tr>
+<!-- Row 12 -->    <tr>	<td>1</td>	<td>0</td>	<td>1</td>	<td>0</td>	<td align="center">10</td>	</tr>
+<!-- Row 13 -->    <tr>	<td>1</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td align="center">11</td>	</tr>
+<!-- Row 14 -->    <tr>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td align="center">12</td>	</tr>
+<!-- Row 15 -->    <tr>	<td>1</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td align="center">13</td>	</tr>
+<!-- Row 16 -->    <tr>	<td>1</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td align="center">14</td>	</tr>
+<!-- Row 17 -->    <tr>	<td>1</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td align="center">15</td>	</tr>
+	</table>
+<h3>Program</h3>
+	<pre>
+//4 bit Binary Counter
+
+#include<stdio.h>
+#include<debug.h>
+#include<ch32v00x.h>
+
+void GPIO_Config(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
+    
+// Input Pins Configuration
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Defined as Input Type
+	GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+//Output Pins Configuration
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2| GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+// The MAIN function responsible for the execution of program
+int main()
+{
+    uint8_c counter=0;
+    uint8_c rst;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    SystemCoreClockUpdate();
+    Delay_Init();
+    GPIO_Config();
+	while(1){
+       		rst = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1);
+      		if(rst==RESET){
+        			counter=0;
+      				}
+      		GPIO_WriteBit(GPIOC, GPIO_Pin_2, (counter & 0x01)? SET : RESET);//LSB
+      		GPIO_WriteBit(GPIOC, GPIO_Pin_3, (counter & 0x02)? SET : RESET);
+      		GPIO_WriteBit(GPIOC, GPIO_Pin_4, (counter & 0x04)? SET : RESET);
+      		GPIO_WriteBit(GPIOC, GPIO_Pin_5, (counter & 0x08)? SET : RESET);//MSB
+      		counter++;
+    }
+    return 0;
+}
+	</pre>
+ <h3>Application Video Link</h3>
+ <a href="">4_Bit_Binary_Counter</a>
+</details>
 <hr>
