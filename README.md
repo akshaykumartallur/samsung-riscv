@@ -5,7 +5,7 @@
 <b>Email:</b> <a href="mailto:tallurakshaykumar@gmail.com">tallurakshaykumar@gmail.com</a><br>
 <b>GitHub Profile:</b> <a href="https://github.com/akshaykumartallur">akshaykumartallur</a><hr>
 <!-- Task 1 -->				  
-<details><p><summary><b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISV to get the corresponding assembly instructions for O1 and Ofast.</summary></p>
+<details><p><summary><b>Task 1:</b> Task is to install RISC-V toolchain using VDI link provided,Compiling the C code and Using RISCV to get the corresponding assembly instructions for O1 and Ofast.</summary></p>
 <h3>1. Install Ubuntu 18.04 LTS on Oracle Virtual Machine Box and open VDI file provided</h3><br><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%201/VM_box.png"  alt=Virtual     Machine><br><br>
 <h3>2. Compiling C code</h3><br><br>
