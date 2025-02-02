@@ -905,8 +905,8 @@ void GPIO_Config(void)
 // The MAIN function responsible for the execution of program
 int main()
 {
-    uint8_c counter=0;
-    uint8_c rst;
+    uint8_t counter=0;
+    uint8_t rst;
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     SystemCoreClockUpdate();
     Delay_Init();
