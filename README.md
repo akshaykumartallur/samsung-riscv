@@ -297,7 +297,7 @@ spike -d pk fact.o</code></pre>
 		   <li><b>Destination Register(rd): </b>sp (x2,5 bits)</li>
 		   <li><b>Function(funct3): </b>000 (3 bits)</li>
 	   </ul>	   
-<br><b>&nbsp;&nbsp;Breakdown:</b><br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
 	   <ul>
 		   <li><b>Immediate(-32): </b><code>111111100000</code></li>
 		   <li><b>rs1(sp=x2): </b><code>00010</code> </li>
@@ -305,7 +305,7 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(sp=x2): </b><code>00010</code> </li>
 		   <li><b>Opcode: </b><code>0010011</code></li>
 	   </ul>   
-<br><pre><code>10184:       fe010113          addi  sp, sp, -32</code></pre>	   
+<pre><code>10184:       fe010113          addi  sp, sp, -32</code></pre>	   
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -332,7 +332,7 @@ spike -d pk fact.o</code></pre>
 		   <li><b>Source Register(rd): </b>ra (x1,5 bits)</li>
 		   <li><b>Function(funct3): </b>011 (3 bits)</li>
 	   </ul>
-<br><b>&nbsp;&nbsp;Breakdown:</b><br><br>
+<b>&nbsp;&nbsp;Breakdown:</b><br><br>
 	   <ul>
 		   <li><b>Immediate(24): </b><code>000000011000 </code>(Split into imm[11:5]=<code>0000000</code> and imm[4:0]=<code>11000</code>)</li>
 		   <li><b>rs1(sp=x2): </b><code>00010</code></li>
@@ -340,7 +340,7 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rs2(ra=x1): </b><code>00001</code> </li>
 		   <li><b>Opcode: </b><code>0100011</code></li>
 	   </ul>
- <br><b>&nbsp;&nbsp;Binary Representation:</b><br><br>
+ <b>&nbsp;&nbsp;Binary Representation:</b><br><br>
 	   <ul>
 		   <li><b>imm[11:5] (7 bits): </b><code>0000000</code></li>
 		   <li><b>rs2 (5 bits): </b><code>00001</code></li>
@@ -349,7 +349,7 @@ spike -d pk fact.o</code></pre>
 		   <li><b>imm[4:0] (5 bits): </b><code>11000</code></li>
 		   <li><b>opcode (7 bits): </b><code>0100011</code></li>
 	   </ul>
-<br><pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>	   
+<pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>	   
 <table>
 	<tr>
 		<th>Imm[11:5] (7 bits)</th>
