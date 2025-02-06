@@ -168,12 +168,14 @@ spike -d pk fact.o</code></pre>
 <!-- Explaination -->	
 <h2>Instruction Types and Fields</h2>
 <p> The RISC-V instructions are categorized into types based on their filed organization.Each type has specific fields like opcode,funct3,funct4,immediate values and register numbers. The types include:</p>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; R-Type:</b> Register Type <br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; I-Type:</b> Immediate Type <br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; S-Type:</b> Store Type <br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; B-Type:</b> Branch Type <br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; U-Type:</b> Upper Immediate Type <br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; J-Type:</b> Jump Type <br>
+	<ul>
+		<li><b>R-Type:</b> Register Type</li>
+		<li><b>I-Type:</b> Immediate Type</li>
+		<li><b>S-Type:</b> Store Type</li>
+		<li><b>B-Type:</b> Branch Type</li>
+		<li><b>U-Type:</b> Upper Immediate Type</li>
+		<li><b>J-Type:</b> Jump Type</li>
+	</ul>
 <!-- R-Type -->
 <h3>RISCV R-Type Instructions</h3>
 <p>R-type instructions are used for operations that involve only registers. These instructions typically perform arithmetic, logical, and shift operations.</p>
@@ -183,12 +185,14 @@ spike -d pk fact.o</code></pre>
   funct7[31:25](7-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
 +----------------------------------------------------------------------------------------------------------------------------------+
 </pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct7:</b> Further specifies the operation.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2:</b> Second source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1:</b> First source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3:</b> Further specifies the operation.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd:</b> Destination register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br>
+	<ul>
+		<li><b>funct7:</b> Further specifies the operation.<br></li>
+		<li><b>rs2:</b> Second source register.<br></li>
+		<li><b>rs1:</b> First source register.</li>
+		<li><b>funct3:</b> Further specifies the operation.</li>
+		<li><b>rd:</b> Destination register.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
 <!-- I-Type -->
 <h3>RISCV I-Type Instructions</h3>
 <p>I-Type instructions cover various operations, including immediate arithmetic, load operations, and certain control flow instructions.</p>
@@ -196,11 +200,13 @@ spike -d pk fact.o</code></pre>
 <pre>+----------------------------------------------------------------------------------------------------------+
   imm[31:20](12-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
 +----------------------------------------------------------------------------------------------------------+</pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm:</b> Immediate Value.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1:</b> First source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3:</b> Further specifies the operation.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd:</b> Destination register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br>
+	<ul>
+		<li><b>imm:</b> Immediate Value.</li>
+		<li><b>rs1:</b> First source register.</li>
+		<li><b>funct3:</b> Further specifies the operation.</li>
+		<li><b>rd:</b> Destination register.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
 <!-- S-Type -->
 <h3>RISCV S-Type Instructions</h3>
 <p>S-type instructions are essential for accessing and manipulating data in memory.Used to store data from a register to memory.</p>
@@ -208,11 +214,13 @@ spike -d pk fact.o</code></pre>
 <pre>+--------------------------------------------------------------------------------------------------------------------------------------------+
   imm[31:25](11:5)(7-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | imm[11:7](4:0)(5-bits) | opcode[6:0](7-bits)
 +--------------------------------------------------------------------------------------------------------------------------------------------+</pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm:</b> Immediate Value( split into imm[11:5] and imm[4:0]).<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2:</b> Second source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1:</b> First source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3:</b> Further specifies the operation.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br>
+	<ul>
+		<li><b>imm:</b> Immediate Value( split into imm[11:5] and imm[4:0]).</li>
+		<li><b>rs2:</b> Second source register.</li>
+		<li><b>rs1:</b> First source register.</li>
+		<li><b>funct3:</b> Further specifies the operation.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
 <!-- B-Type -->   
 <h3>RISCV B-Type Instructions</h3>
 <p>B-type instructions are crucial for implementing control flow in programs, enabling conditional execution of code blocks.Used for conditional branches, which alter the program flow based on a comparison of register values.</p>
@@ -220,11 +228,13 @@ spike -d pk fact.o</code></pre>
 <pre>+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
   imm[31](12)(1-bit) | imm[30:25](10:5)(6-bits) | rs2[24:20](5-bits) | rs1[19:15](5-bits) | funct3[14:12](3-bits) | imm[11:8](4:1)(4-bits) | imm[7](11)(1-bit) | opcode[6:0](7-bits)
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm:</b> Immediate Value( split into imm[12], imm[10:5], imm[4:1] and imm[11]).<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2:</b> Second source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1:</b> First source register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3:</b> Further specifies the operation.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br>
+	<ul>
+		<li><b>imm:</b> Immediate Value( split into imm[12], imm[10:5], imm[4:1] and imm[11]).</li>
+		<li><b>rs2:</b> Second source register.</li>
+		<li><b>rs1:</b> First source register.</li>
+		<li><b>funct3:</b> Further specifies the operation.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
 <!-- U-Type -->
 <h3>RISCV U-Type Instructions</h3>
 <p>U-Type instructions are used for operations like loading upper immediate (LUI) and adding upper immediate to PC (AUIPC).</p>
@@ -232,9 +242,11 @@ spike -d pk fact.o</code></pre>
 <pre>+----------------------------------------------------------------------------------------------------------+
                   imm[31:12](20-bits)                |    rd[11:7](5-bits)      |     opcode[6:0](7-bits)
 +----------------------------------------------------------------------------------------------------------+</pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm:</b> Upper 20 bits of the immediate value.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd:</b> Destination register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br>
+	<ul>
+		<li><b>imm:</b> Upper 20 bits of the immediate value.</li>
+		<li><b>rd:</b> Destination register.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
 <!-- J-Type -->    
 <h3>RISCV J-Type Instructions</h3>
 <p>J-type instructions in RISC-V are primarily used for unconditional jumps to specific target addresses within the program.They play a crucial role in controlling the flow of execution by transferring control to a different part of the code.</p>
@@ -242,9 +254,12 @@ spike -d pk fact.o</code></pre>
 <pre>+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
   imm[31](20)(1-bit) | imm[30:21](10:1)(10-bits) | imm[20](11)(1-bit) | imm[19:12](19:12)(8-bits) | rd[11:7](5-bits) | opcode[6:0](7-bits)
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</pre>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm:</b> Immediate Value( split into imm[20], imm[10:1], imm[11] and imm[19:12]).<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd:</b> Destination register.<br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode:</b> Specifies the operation.<br></details>
+	<ul>
+		<li><b>imm:</b> Immediate Value( split into imm[20], imm[10:1], imm[11] and imm[19:12]).</li>
+		<li><b>rd:</b> Destination register.</li>
+		<li><b>opcode:</b> Specifies the operation.</li>
+	</ul>
+</details>
 <!-- Machine Codes -->
 <details><p><summary>Machine Codes for Different Instructions</summary></p>
 <h2>Machine Codes:</h2>
@@ -275,18 +290,22 @@ spike -d pk fact.o</code></pre>
 <!-- 1 -->
 <h3>1. Machine code for <code>addi sp, sp, -32</code></h3>
 <b>&nbsp;&nbsp;Instruction: </b><code>addi sp, sp, -32</code>  <br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0010011 (7 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>-32 (12 bits,two's complement) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rs1): </b>sp (x2,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Destination Register(rd): </b>sp (x2,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>000 (3 bits) <br><br>
-<b>&nbsp;&nbsp;Breakdown:</b><br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(-32): </b><code>111111100000</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>000</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rd(sp=x2): </b><code>00010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0010011</code> <br><br>
-<pre><code>10184:       fe010113          addi  sp, sp, -32</code></pre>	   
+	   <ul>
+		   <li><b>Opcode: </b>0010011 (7 bits) </li>
+		   <li><b>Immediate: </b>-32 (12 bits,two's complement) </li>
+		   <li><b>Source Register(rs1): </b>sp (x2,5 bits) </li>
+		   <li><b>Destination Register(rd): </b>sp (x2,5 bits)</li>
+		   <li><b>Function(funct3): </b>000 (3 bits)</li>
+	   </ul>	   
+<br><b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	   <ul>
+		   <li><b>Immediate(-32): </b><code>111111100000</code></li>
+		   <li><b>rs1(sp=x2): </b><code>00010</code> </li>
+		   <li><b>funct3: </b><code>000</code></li>
+		   <li><b>rd(sp=x2): </b><code>00010</code> </li>
+		   <li><b>Opcode: </b><code>0010011</code></li>
+	   </ul>   
+<br><pre><code>10184:       fe010113          addi  sp, sp, -32</code></pre>	   
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -306,25 +325,31 @@ spike -d pk fact.o</code></pre>
 <!-- 2 -->
 <h3>2. Machine code for <code>sd ra, 24(sp)</code></h3>
 <b>&nbsp;&nbsp;Instruction: </b><code>sd ra, 24(sp)</code>  <br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b>0100011 (7 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate: </b>24 (12 bits split into imm[11:5] and imm[4:0]) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Base Register(rs1): </b>sp (x2,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Source Register(rd): </b>ra (x1,5 bits) <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Function(funct3): </b>011 (3 bits) <br><br>
-<b>&nbsp;&nbsp;Breakdown:</b><br><br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Immediate(24): </b><code>000000011000 </code>(Split into imm[11:5]=<code>0000000</code> and 		imm[4:0]=<code>11000</code>)<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1(sp=x2): </b><code>00010</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3: </b><code>011</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2(ra=x1): </b><code>00001</code> <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; Opcode: </b><code>0100011</code> <br><br>
- <b>&nbsp;&nbsp;Binary Representation:</b><br><br>
- 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm[11:5] (7 bits): </b><code>0000000</code><br>
-  	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs2 (5 bits): </b><code>00001</code><br>
-   	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; rs1 (5 bits): </b><code>00010</code><br>
-    	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; funct3 (3 bits): </b><code>011</code><br>
-     	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; imm[4:0] (5 bits): </b><code>11000</code><br>
-      	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183; opcode (7 bits): </b><code>0100011</code><br><br>
-<pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>	   
+	   <ul>
+		   <li><b>Opcode: </b>0100011 (7 bits)</li>
+		   <li><b>Immediate: </b>24 (12 bits split into imm[11:5] and imm[4:0]) </li>
+		   <li><b>Base Register(rs1): </b>sp (x2,5 bits)</li>
+		   <li><b>Source Register(rd): </b>ra (x1,5 bits)</li>
+		   <li><b>Function(funct3): </b>011 (3 bits)</li>
+	   </ul>
+<br><b>&nbsp;&nbsp;Breakdown:</b><br><br>
+	   <ul>
+		   <li><b>Immediate(24): </b><code>000000011000 </code>(Split into imm[11:5]=<code>0000000</code> and imm[4:0]=<code>11000</code>)</li>
+		   <li><b>rs1(sp=x2): </b><code>00010</code></li>
+		   <li><b>funct3: </b><code>011</code> </li>
+		   <li><b>rs2(ra=x1): </b><code>00001</code> </li>
+		   <li><b>Opcode: </b><code>0100011</code></li>
+	   </ul>
+ <br><b>&nbsp;&nbsp;Binary Representation:</b><br><br>
+	   <ul>
+		   <li><b>imm[11:5] (7 bits): </b><code>0000000</code></li>
+		   <li><b>rs2 (5 bits): </b><code>00001</code></li>
+		   <li><b>rs1 (5 bits): </b><code>00010</code></li>
+		   <li><b>funct3 (3 bits): </b><code>011</code></li>
+		   <li><b>imm[4:0] (5 bits): </b><code>11000</code></li>
+		   <li><b>opcode (7 bits): </b><code>0100011</code></li>
+	   </ul>
+<br><pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>	   
 <table>
 	<tr>
 		<th>Imm[11:5] (7 bits)</th>
