@@ -917,19 +917,22 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <h3>Overview</h3>
 	<p>This project involves the implementation of 4-bit binary up counter sequential circuit using VSD squadron mini, a RISCV based SoC development kit. A binary counter is a fundamental digital circuit that increments its value through a sequence of binary numbers. This project show cases the practical application of digital logic and RISC-V architecture by implementing a counting function. It involves reading and writing binary data through GPIO pins, implementing the 4-bit Counter logic, Simulating the design using PlatformIO IDE and displaying the counter's output using LEDs. This Project provides a hands-on understanding of how to control and manipulate digital signals using a micro-controller and how to implement a basic digital building block.</p>
 <h3>Components Required</h3>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> VSD Squadron Mini<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Push button for resetting the counter <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> 4 LEDs for Output <br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Bread Board<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> Jumper wires<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> VS Code for software Development<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> PlatformIO multi framework professional IDE<br>
+	<ul>
+		<li> VSD Squadron Mini</li>
+		<li> Push button for resetting the counter </li>
+		<li> 4 LEDs for Output </li>
+		<li> Bread Board</li>
+		<li> Jumper wires</li>
+		<li> VS Code for software Development</li>
+		<li> PlatformIO multi framework professional IDE</li>
+	</ul>
 <h3>Hardware Connections</h3>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> <b>Inputs: </b>One input connected to the GPIO Pins of VSDsquadron Mini via push button mounted on the breadboard.<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> <b>Outputs: </b> Four LEDs are connected to display the result of 4-bit binary counter.<br>
-	<b>&nbsp;&nbsp;&nbsp;&nbsp;&#183;</b> The GPIO pins are configured according to the reference mannual ensuring the correct flow of signals between the components.<br>
-<br>
-	<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_bit_Binary_Counter_Circuit.png" alt="4-bit Binary Counter">
+	<ul>
+		<li><b>Inputs: </b>One input connected to the GPIO Pins of VSDsquadron Mini via push button mounted on the breadboard.</li>
+		<li><b>Outputs: </b> Four LEDs are connected to display the result of 4-bit binary counter.</li>
+		<li>The GPIO pins are configured according to the reference mannual ensuring the correct flow of signals between the components.</li>
+	</ul><br>
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_bit_Binary_Counter_Circuit.png" alt="4-bit Binary Counter">
 <br><br>
 <h3>Truth Table for Binary Counter</h3>
 	<table>
