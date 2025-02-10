@@ -1,0 +1,85 @@
+//4 by 4 Multiplier
+
+#include<stdio.h>
+#include<debug.h>
+#include<ch32v00x.h>
+
+void GPIO_Config(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
+    
+   // 3 inputs A,B and Reset
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0| GPIO_Pin_1| GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    // 4 outputs from C port for bit0,bit1,bit2,bit3
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3| GPIO_Pin_4 |GPIO_Pin_5| GPIO_Pin_6;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    //4 outputs from D port for bit4,bit5,bit6,bit7
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+}
+
+
+int main()
+{
+    uint8_t a=0;
+    uint8_t b=0;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+    SystemCoreClockUpdate();
+    Delay_Init();
+    GPIO_Config();
+
+    while(1)
+    {
+        uint8_t curStateA=SET;
+        uint8_t prevStateA=SET;
+        uint8_t curStateB=SET;
+        uint8_t prevStateB=SET;
+        curStateA = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
+        curStateB = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
+        //reset logic
+            if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET){
+                Delay_Ms(30);
+                while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET);
+                a=0;
+                b=0;
+            }
+        //This is to increment the value of a on each push
+            if(curStateA != prevStateA && curStateA==RESET){
+                Delay_Ms(30);
+                curStateA=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
+                if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET){
+                    a++;
+                    while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET);
+                }
+            }
+        //This is to increment the value of b on each push
+            if(curStateB != prevStateB && curStateB==RESET){
+                Delay_Ms(30);
+                curStateB=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
+                if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==RESET){
+                    b++;
+                    while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==RESET);
+                }
+            }
+            uint8_t mul=a*b;
+            GPIO_WriteBit(GPIOC, GPIO_Pin_3, (mul & 1)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_4, (mul & 2)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_5, (mul & 4)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_6, (mul & 8)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_5, (mul & 16)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_2, (mul & 32)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_3, (mul & 64)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_4, (mul & 128)?SET:RESET);
+            Delay_Ms(100);
+    }
+}
