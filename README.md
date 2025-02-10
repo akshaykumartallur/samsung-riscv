@@ -1131,7 +1131,9 @@ while(1)
 }
 	</code></pre>
 </details>
-
-
-
+<hr>
+<h3><i>4_by_4_Multiplier_Implementation_Video</i></h3>
+<ul>
+	<li><a href="https://youtu.be/OKGFexka1L0?si=fC65RtqQIhWsiiqv"><b>Video_Link<i></i></b></a></li>
+</ul>
 <hr>
