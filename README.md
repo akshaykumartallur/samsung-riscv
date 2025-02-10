@@ -913,14 +913,14 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 <!-- Task 5 -->
 <details>
 	<summary><b>Task 5:</b> To implement any digital circuit using VSDSquadron Mini and check whether building and uploading of C program file on RISCV processor works.</summary>
-<h2>Implement 4-Bit Binary Counter Using VSDSquadron Mini </h2>
+<h2>Implement 4 by 4 Multiplier Using VSDSquadron Mini </h2>
 <h3>Overview</h3>
-	<p>This project involves the implementation of 4-bit binary up counter sequential circuit using VSD squadron mini, a RISCV based SoC development kit. A binary counter is a fundamental digital circuit that increments its value through a sequence of binary numbers. This project show cases the practical application of digital logic and RISC-V architecture by implementing a counting function. It involves reading and writing binary data through GPIO pins, implementing the 4-bit Counter logic, Simulating the design using PlatformIO IDE and displaying the counter's output using LEDs. This Project provides a hands-on understanding of how to control and manipulate digital signals using a micro-controller and how to implement a basic digital building block.</p>
+	<p>This project involves the implementation of a 4x4 binary multiplier circuit using the VSD Squadron Mini, a RISC-V based SoC development kit. A binary multiplier is a fundamental digital circuit that performs binary multiplication of two numbers. This project showcases the practical application of digital logic and RISC-V architecture by implementing a multiplication function. It involves reading and writing binary data through GPIO pins, implementing the 4x4 multiplier logic , simulating the design using the PlatformIO IDE, and displaying the multiplier's 8-bit output using LEDs. This project provides a hands-on understanding of how to control and manipulate digital signals using a microcontroller and how to implement a more complex digital building block like a multiplier.  It also highlights the use of RISC-V for custom hardware acceleration or digital signal processing applications.</p>
 <h3>Components Required</h3>
 	<ul>
 		<li> VSD Squadron Mini</li>
-		<li> Push button for resetting the counter </li>
-		<li> 4 LEDs for Output </li>
+		<li> Push buttons for A input B input and Reset </li>
+		<li> 8 LEDs for Output </li>
 		<li> Bread Board</li>
 		<li> Jumper wires</li>
 		<li> VS Code for software Development</li>
@@ -928,86 +928,210 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	</ul>
 <h3>Hardware Connections</h3>
 	<ul>
-		<li><b>Inputs: </b>One input connected to the GPIO Pins of VSDsquadron Mini via push button mounted on the breadboard.</li>
-		<li><b>Outputs: </b> Four LEDs are connected to display the result of 4-bit binary counter.</li>
+		<li><b>Inputs: </b>Three inputs connected to the GPIO Pins of VSDsquadron Mini via push buttons mounted on the breadboard.</li>
+		<li><b>Outputs: </b> Eight LEDs are connected to display the result of 4 by 4 Binary Multiplier.</li>
 		<li>The GPIO pins are configured according to the reference mannual ensuring the correct flow of signals between the components.</li>
 	</ul><br>
-<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_bit_Binary_Counter_Circuit.png" alt="4-bit Binary Counter">
+<img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_by_4_Multiplier_Circuit.png" alt="4 by 4 Multiplier">
 <br><br>
 <h3>Truth Table for Binary Counter</h3>
-	<table>
-<!-- Row 01 -->    <tr>
-			<th>Q<sub>3</sub></th>
-			<th>Q<sub>2</sub></th>
-			<th>Q<sub>1</sub></th>
-			<th>Q<sub>0</sub></th>
-			<th>Decimal Value</th>
-		   </tr>
-<!-- Row 02 -->    <tr>	<td>0</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td align="center">0</td>	</tr>
-<!-- Row 03 -->    <tr>	<td>0</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td align="center">1</td>	</tr>
-<!-- Row 04 -->    <tr>	<td>0</td>	<td>0</td>	<td>1</td>	<td>0</td>	<td align="center">2</td>	</tr>
-<!-- Row 05 -->    <tr>	<td>0</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td align="center">3</td>	</tr>
-<!-- Row 06 -->    <tr>	<td>0</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td align="center">4</td>	</tr>
-<!-- Row 07 -->    <tr>	<td>0</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td align="center">5</td>	</tr>
-<!-- Row 08 -->    <tr>	<td>0</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td align="center">6</td>	</tr>
-<!-- Row 09 -->    <tr>	<td>0</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td align="center">7</td>	</tr>
-<!-- Row 10 -->    <tr>	<td>1</td>	<td>0</td>	<td>0</td>	<td>0</td>	<td align="center">8</td>	</tr>
-<!-- Row 11 -->    <tr>	<td>1</td>	<td>0</td>	<td>0</td>	<td>1</td>	<td align="center">9</td>	</tr>
-<!-- Row 12 -->    <tr>	<td>1</td>	<td>0</td>	<td>1</td>	<td>0</td>	<td align="center">10</td>	</tr>
-<!-- Row 13 -->    <tr>	<td>1</td>	<td>0</td>	<td>1</td>	<td>1</td>	<td align="center">11</td>	</tr>
-<!-- Row 14 -->    <tr>	<td>1</td>	<td>1</td>	<td>0</td>	<td>0</td>	<td align="center">12</td>	</tr>
-<!-- Row 15 -->    <tr>	<td>1</td>	<td>1</td>	<td>0</td>	<td>1</td>	<td align="center">13</td>	</tr>
-<!-- Row 16 -->    <tr>	<td>1</td>	<td>1</td>	<td>1</td>	<td>0</td>	<td align="center">14</td>	</tr>
-<!-- Row 17 -->    <tr>	<td>1</td>	<td>1</td>	<td>1</td>	<td>1</td>	<td align="center">15</td>	</tr>
-	</table>
+<table>
+<!--Row 1-->
+	<tr>
+		<th colspan="4" align="center">A</th><th colspan="4" align="center">B</th><th colspan="8" align="center">P</th>
+	</tr>
+<!--Row 2-->
+<tr> 
+<!--A -->  <th>A<sub>3</sub></th> <th>A<sub>2</sub></th> <th>A<sub>1</sub></th> <th>A<sub>0</sub></th> 
+<!--B -->  <th>B<sub>3</sub></th> <th>B<sub>2</sub></th> <th>B<sub>1</sub></th> <th>B<sub>0</sub></th>
+<!--Product-->	<th>P<sub>7</sub></th> <th>P<sub>6</sub></th> <th>P<sub>5</sub></th> <th>P<sub>4</sub></th> 
+		<th>P<sub>3</sub></th> <th>P<sub>2</sub></th> <th>P<sub>1</sub></th> <th>P<sub>0</sub></th>
+</tr>	
+<!--Row 3-->
+<tr> 
+<!--A -->  <th>0</th> <th>0</th> <th>0</th> <th>0</th> 
+<!--B -->  <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+</tr>	
+<!--Row 4-->
+<tr> 
+<!--A -->  <th>0</th> <th>0</th> <th>0</th> <th>1</th> 
+<!--B -->  <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 5-->
+<tr> 
+<!--A -->  <th>0</th> <th>0</th> <th>1</th> <th>0</th> 
+<!--B -->  <th>0</th> <th>0</th> <th>1</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 6-->
+<tr> 
+<!--A -->  <th>0</th> <th>0</th> <th>1</th> <th>1</th> 
+<!--B -->  <th>0</th> <th>0</th> <th>1</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 7-->
+<tr> 
+<!--A -->  <th>0</th> <th>1</th> <th>0</th> <th>0</th> 
+<!--B -->  <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 8-->
+<tr> 
+<!--A -->  <th>0</th> <th>1</th> <th>0</th> <th>1</th> 
+<!--B -->  <th>0</th> <th>1</th> <th>0</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 9-->
+<tr> 
+<!--A -->  <th>0</th> <th>1</th> <th>1</th> <th>0</th> 
+<!--B -->  <th>0</th> <th>1</th> <th>1</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 10-->
+<tr> 
+<!--A -->  <th>0</th> <th>1</th> <th>1</th> <th>1</th> 
+<!--B -->  <th>0</th> <th>1</th> <th>1</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 11-->
+<tr> 
+<!--A -->  <th>1</th> <th>0</th> <th>0</th> <th>0</th> 
+<!--B -->  <th>1</th> <th>0</th> <th>0</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 12-->
+<tr> 
+<!--A -->  <th>1</th> <th>0</th> <th>0</th> <th>1</th> 
+<!--B -->  <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 13-->
+<tr> 
+<!--A -->  <th>1</th> <th>0</th> <th>1</th> <th>0</th> 
+<!--B -->  <th>1</th> <th>0</th> <th>1</th> <th>0</th>
+<!--Product-->	<th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 14-->
+<tr> 
+<!--A -->  <th>1</th> <th>0</th> <th>1</th> <th>1</th> 
+<!--B -->  <th>1</th> <th>0</th> <th>1</th> <th>1</th>
+<!--Product-->	<th>0</th> <th>1</th> <th>1</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 15-->
+<tr> 
+<!--A -->  <th>1</th> <th>1</th> <th>0</th> <th>0</th> 
+<!--B -->  <th>1</th> <th>1</th> <th>0</th> <th>0</th>
+<!--Product-->	<th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 16-->
+<tr> 
+<!--A -->  <th>1</th> <th>1</th> <th>0</th> <th>1</th> 
+<!--B -->  <th>1</th> <th>1</th> <th>0</th> <th>1</th>
+<!--Product-->	<th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+<!--Row 17-->
+<tr> 
+<!--A -->  <th>1</th> <th>1</th> <th>1</th> <th>0</th> 
+<!--B -->  <th>1</th> <th>1</th> <th>1</th> <th>0</th>
+<!--Product-->	<th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+</tr>
+<!--Row 18-->
+<tr> 
+<!--A -->  <th>1</th> <th>1</th> <th>1</th> <th>1</th> 
+<!--B -->  <th>1</th> <th>1</th> <th>1</th> <th>1</th>
+<!--Product-->	<th>1</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+</tr>
+</table>
+	
 <h3>Program</h3>
-	<pre>
-//4 bit Binary Counter
-
+<pre><code>//4 by 4 Multiplier
 #include<stdio.h>
 #include<debug.h>
 #include<ch32v00x.h>
 
 void GPIO_Config(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
-    
-// Input Pins Configuration
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Defined as Input Type
-	GPIO_Init(GPIOD, &GPIO_InitStructure);
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
 
-//Output Pins Configuration
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2| GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOC, &GPIO_InitStructure);
+// 3 inputs A,B and Reset
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0| GPIO_Pin_1| GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+// 4 outputs from C port for bit0,bit1,bit2,bit3
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3| GPIO_Pin_4 |GPIO_Pin_5| GPIO_Pin_6;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+    //4 outputs from D port for bit4,bit5,bit6,bit7
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
 }
 
-// The MAIN function responsible for the execution of program
+
 int main()
 {
-    uint8_t counter=0;
-    uint8_t rst;
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    uint8_t a=0;
+    uint8_t b=0;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
     SystemCoreClockUpdate();
     Delay_Init();
     GPIO_Config();
-	while(1){
-       		rst = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1);
-      		if(rst==RESET){
-        			counter=0;
-      				}
-      		GPIO_WriteBit(GPIOC, GPIO_Pin_2, (counter & 0x01)? SET : RESET);//LSB
-      		GPIO_WriteBit(GPIOC, GPIO_Pin_3, (counter & 0x02)? SET : RESET);
-      		GPIO_WriteBit(GPIOC, GPIO_Pin_4, (counter & 0x04)? SET : RESET);
-      		GPIO_WriteBit(GPIOC, GPIO_Pin_5, (counter & 0x08)? SET : RESET);//MSB
-      		counter++;
+    
+while(1)
+    {
+        uint8_t curStateA=SET;
+        uint8_t prevStateA=SET;
+        uint8_t curStateB=SET;
+        uint8_t prevStateB=SET;
+        curStateA = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
+        curStateB = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
+        //reset logic
+            if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET){
+                Delay_Ms(30);
+                while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET);
+                a=0;
+                b=0;
+            }
+        //This is to increment the value of a on each push
+            if(curStateA != prevStateA && curStateA==RESET){
+                Delay_Ms(30);
+                curStateA=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
+                if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET){
+                    a++;
+                    while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET);
+                }
+            }
+        //This is to increment the value of b on each push
+            if(curStateB != prevStateB && curStateB==RESET){
+                Delay_Ms(30);
+                curStateB=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
+                if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==RESET){
+                    b++;
+                    while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==RESET);
+                }
+            }
+            uint8_t mul=a*b;
+            GPIO_WriteBit(GPIOC, GPIO_Pin_3, (mul & 1)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_4, (mul & 2)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_5, (mul & 4)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_6, (mul & 8)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_5, (mul & 16)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_2, (mul & 32)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_3, (mul & 64)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_4, (mul & 128)?SET:RESET);
+            Delay_Ms(100);
     }
-    return 0;
 }
-	</pre>
+	</code></pre>
 </details>
+
+
+
 <hr>
