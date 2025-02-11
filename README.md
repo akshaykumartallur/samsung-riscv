@@ -949,99 +949,99 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 </tr>	
 <!--Row 3-->
 <tr> 
-<!--A -->  <th>0</th> <th>0</th> <th>0</th> <th>0</th> 
-<!--B -->  <th>0</th> <th>0</th> <th>0</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+<!--A -->  <td>0</td> <td>0</td> <td>0</td> <td>0</td> 
+<!--B -->  <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
 </tr>	
 <!--Row 4-->
 <tr> 
-<!--A -->  <th>0</th> <th>0</th> <th>0</th> <th>1</th> 
-<!--B -->  <th>0</th> <th>0</th> <th>0</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>0</td> <td>0</td> <td>0</td> <td>1</td> 
+<!--B -->  <td>0</td> <td>0</td> <td>0</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 5-->
 <tr> 
-<!--A -->  <th>0</th> <th>0</th> <th>1</th> <th>0</th> 
-<!--B -->  <th>0</th> <th>0</th> <th>1</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+<!--A -->  <td>0</td> <td>0</td> <td>1</td> <td>0</td> 
+<!--B -->  <td>0</td> <td>0</td> <td>1</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 6-->
 <tr> 
-<!--A -->  <th>0</th> <th>0</th> <th>1</th> <th>1</th> 
-<!--B -->  <th>0</th> <th>0</th> <th>1</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>0</td> <td>0</td> <td>1</td> <td>1</td> 
+<!--B -->  <td>0</td> <td>0</td> <td>1</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 7-->
 <tr> 
-<!--A -->  <th>0</th> <th>1</th> <th>0</th> <th>0</th> 
-<!--B -->  <th>0</th> <th>1</th> <th>0</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+<!--A -->  <td>0</td> <td>1</td> <td>0</td> <td>0</td> 
+<!--B -->  <td>0</td> <td>1</td> <td>0</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 8-->
 <tr> 
-<!--A -->  <th>0</th> <th>1</th> <th>0</th> <th>1</th> 
-<!--B -->  <th>0</th> <th>1</th> <th>0</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>0</td> <td>1</td> <td>0</td> <td>1</td> 
+<!--B -->  <td>0</td> <td>1</td> <td>0</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 9-->
 <tr> 
-<!--A -->  <th>0</th> <th>1</th> <th>1</th> <th>0</th> 
-<!--B -->  <th>0</th> <th>1</th> <th>1</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+<!--A -->  <td>0</td> <td>1</td> <td>1</td> <td>0</td> 
+<!--B -->  <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 10-->
 <tr> 
-<!--A -->  <th>0</th> <th>1</th> <th>1</th> <th>1</th> 
-<!--B -->  <th>0</th> <th>1</th> <th>1</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>0</td> <td>1</td> <td>1</td> <td>1</td> 
+<!--B -->  <td>0</td> <td>1</td> <td>1</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 11-->
 <tr> 
-<!--A -->  <th>1</th> <th>0</th> <th>0</th> <th>0</th> 
-<!--B -->  <th>1</th> <th>0</th> <th>0</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+<!--A -->  <td>1</td> <td>0</td> <td>0</td> <td>0</td> 
+<!--B -->  <td>1</td> <td>0</td> <td>0</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 12-->
 <tr> 
-<!--A -->  <th>1</th> <th>0</th> <th>0</th> <th>1</th> 
-<!--B -->  <th>1</th> <th>0</th> <th>0</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>1</td> <td>0</td> <td>0</td> <td>1</td> 
+<!--B -->  <td>1</td> <td>0</td> <td>0</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 13-->
 <tr> 
-<!--A -->  <th>1</th> <th>0</th> <th>1</th> <th>0</th> 
-<!--B -->  <th>1</th> <th>0</th> <th>1</th> <th>0</th>
-<!--Product-->	<th>0</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+<!--A -->  <td>1</td> <td>0</td> <td>1</td> <td>0</td> 
+<!--B -->  <td>1</td> <td>0</td> <td>1</td> <td>0</td>
+<!--Product-->	<td>0</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 14-->
 <tr> 
-<!--A -->  <th>1</th> <th>0</th> <th>1</th> <th>1</th> 
-<!--B -->  <th>1</th> <th>0</th> <th>1</th> <th>1</th>
-<!--Product-->	<th>0</th> <th>1</th> <th>1</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>1</td> <td>0</td> <td>1</td> <td>1</td> 
+<!--B -->  <td>1</td> <td>0</td> <td>1</td> <td>1</td>
+<!--Product-->	<td>0</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 15-->
 <tr> 
-<!--A -->  <th>1</th> <th>1</th> <th>0</th> <th>0</th> 
-<!--B -->  <th>1</th> <th>1</th> <th>0</th> <th>0</th>
-<!--Product-->	<th>1</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th>
+<!--A -->  <td>1</td> <td>1</td> <td>0</td> <td>0</td> 
+<!--B -->  <td>1</td> <td>1</td> <td>0</td> <td>0</td>
+<!--Product-->	<td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 16-->
 <tr> 
-<!--A -->  <th>1</th> <th>1</th> <th>0</th> <th>1</th> 
-<!--B -->  <th>1</th> <th>1</th> <th>0</th> <th>1</th>
-<!--Product-->	<th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>1</td> <td>1</td> <td>0</td> <td>1</td> 
+<!--B -->  <td>1</td> <td>1</td> <td>0</td> <td>1</td>
+<!--Product-->	<td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 <!--Row 17-->
 <tr> 
-<!--A -->  <th>1</th> <th>1</th> <th>1</th> <th>0</th> 
-<!--B -->  <th>1</th> <th>1</th> <th>1</th> <th>0</th>
-<!--Product-->	<th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th> <th>0</th> <th>0</th>
+<!--A -->  <td>1</td> <td>1</td> <td>1</td> <td>0</td> 
+<!--B -->  <td>1</td> <td>1</td> <td>1</td> <td>0</td>
+<!--Product-->	<td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td>
 </tr>
 <!--Row 18-->
 <tr> 
-<!--A -->  <th>1</th> <th>1</th> <th>1</th> <th>1</th> 
-<!--B -->  <th>1</th> <th>1</th> <th>1</th> <th>1</th>
-<!--Product-->	<th>1</th> <th>1</th> <th>1</th> <th>0</th> <th>0</th> <th>0</th> <th>0</th> <th>1</th>
+<!--A -->  <td>1</td> <td>1</td> <td>1</td> <td>1</td> 
+<!--B -->  <td>1</td> <td>1</td> <td>1</td> <td>1</td>
+<!--Product-->	<td>1</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
 </tr>
 </table>
 	
@@ -1132,7 +1132,7 @@ while(1)
 	</code></pre>
 </details>
 <hr>
-<h3>4_by_4_Multiplier_Implementation_Video</h3>
+<h3>4 by 4 Multiplier Implementation Video</h3>
 <p><b>Higher Quality Video</b></p>
 <ul>
 	<li><a href="https://drive.google.com/file/d/1_pS-wEMCzns7ERaU2UgeH8P4fgFpzNvg/view?usp=sharing"><b>Drive Link<i></i></b></a></li>
