@@ -934,6 +934,36 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	</ul><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_by_4_Multiplier_Circuit.png" alt="4 by 4 Multiplier">
 <br><br>
+<h3>Working and Block Diagram</h3>
+<ol type="1">
+	<li><b>Physical Circuit:</b> Push button for A increments the value of A and push button for B increments the value of B and it is coded to multiply A and B to get the output in 8 LEDs as the output will be 8 bits in size.</li>
+	<li><b>Partial Product Generation (using AND gates):</b>
+		<ul>
+			<li>Each bit of the multiplier (B) is ANDed with each bit of the multiplicand (A).</li>
+			<li>For example, <code>A0 AND B0</code> produces the least significant bit of the first partial product. <code>A3 AND B2</code> produces the most significant bit of another partial product, and so on.</li>
+			<li>Since we have 4 bits in A and 4 bits in B, we get a total of 4 x 4 = 16 partial products. However, notice how they are organized for addition.</li>
+		</ul>
+	</li>
+	<li><b>Partial Product Organization and Shifting:</b>
+		<ul>
+			<li>partial products are arranged such that the appropriate bits are aligned for addition. This implicitly handles the "shifting" that is necessary in multiplication.</li>
+			<li>outputs of the AND gates leading into the adders.they shift left as we go down the circuit. This is equivalent to multiplying by a power of 2 (just like in decimal multiplication when you shift left).</li>
+		</ul>
+	</li>
+	<li><b>Adding the Partial Products (using 4-bit Adders):</b>
+		<ul>
+			<li>4-bit adders are used to sum the partial products in stages.</li>
+			<li><b>First Stage:</b> The first row of AND gates' outputs are directly passed as inputs to the first 4-bit adder. The other input to this adder is zero.</li>
+			<li><b>Subsequent Stages:</b>The outputs (sum and carry) of each 4-bit adder are then fed into the next 4-bit adder along with the next set of partial products. This process continues until all partial products are summed.</li>
+		</ul>
+	</li>
+	<li><b>Final Product:</b>
+		<ul>
+			<li>The final 8-bit product (P7 to P0) is obtained as the output of the last 4-bit adder stage.</li>
+		</ul>
+	</li>
+</ol>
+	<br><img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_bit_Multiplier_Block_Diagram.png" alt="Block_Diagram_Multiplier"><br>
 <h3>Truth Table for 4 By 4 Multiplier</h3>
 <table>
 <!--Row 1-->
@@ -1047,34 +1077,33 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	
 <h3>Program</h3>
 <pre><code>//4 by 4 Multiplier
-#include<stdio.h>
-#include<debug.h>
-#include<ch32v00x.h>
-
+#include&lt;stdio.h&gt;
+#include&lt;debug.h&gt;
+#include&lt;ch32v00x.h&gt;
+	
 void GPIO_Config(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
-
+	
 // 3 inputs A,B and Reset
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0| GPIO_Pin_1| GPIO_Pin_2;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; 
-    GPIO_Init(GPIOC, &GPIO_InitStructure);
-
+    GPIO_Init(GPIOC, &amp;GPIO_InitStructure);
+    
 // 4 outputs from C port for bit0,bit1,bit2,bit3
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3| GPIO_Pin_4 |GPIO_Pin_5| GPIO_Pin_6;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOC, &GPIO_InitStructure);
-    //4 outputs from D port for bit4,bit5,bit6,bit7
+    GPIO_Init(GPIOC, &amp;GPIO_InitStructure);
+    
+//4 outputs from D port for bit4,bit5,bit6,bit7
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
+    GPIO_Init(GPIOD, &amp;GPIO_InitStructure);
 }
-
-
 int main()
 {
     uint8_t a=0;
@@ -1083,7 +1112,6 @@ int main()
     SystemCoreClockUpdate();
     Delay_Init();
     GPIO_Config();
-    
 while(1)
     {
         uint8_t curStateA=SET;
@@ -1092,15 +1120,17 @@ while(1)
         uint8_t prevStateB=SET;
         curStateA = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
         curStateB = GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
-        //reset logic
+	
+//reset logic
             if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET){
                 Delay_Ms(30);
                 while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_2)==RESET);
                 a=0;
                 b=0;
             }
-        //This is to increment the value of a on each push
-            if(curStateA != prevStateA && curStateA==RESET){
+	    
+//This is to increment the value of a on each push
+            if(curStateA != prevStateA &amp;&amp; curStateA==RESET){
                 Delay_Ms(30);
                 curStateA=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0);
                 if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET){
@@ -1108,8 +1138,9 @@ while(1)
                     while(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_0)==RESET);
                 }
             }
-        //This is to increment the value of b on each push
-            if(curStateB != prevStateB && curStateB==RESET){
+	    
+//This is to increment the value of b on each push
+            if(curStateB != prevStateB &amp;&amp; curStateB==RESET){
                 Delay_Ms(30);
                 curStateB=GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1);
                 if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)==RESET){
@@ -1118,14 +1149,14 @@ while(1)
                 }
             }
             uint8_t mul=a*b;
-            GPIO_WriteBit(GPIOC, GPIO_Pin_3, (mul & 1)?SET:RESET);
-            GPIO_WriteBit(GPIOC, GPIO_Pin_4, (mul & 2)?SET:RESET);
-            GPIO_WriteBit(GPIOC, GPIO_Pin_5, (mul & 4)?SET:RESET);
-            GPIO_WriteBit(GPIOC, GPIO_Pin_6, (mul & 8)?SET:RESET);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_5, (mul & 16)?SET:RESET);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_2, (mul & 32)?SET:RESET);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_3, (mul & 64)?SET:RESET);
-            GPIO_WriteBit(GPIOD, GPIO_Pin_4, (mul & 128)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_3, (mul &amp; 1)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_4, (mul &amp; 2)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_5, (mul &amp; 4)?SET:RESET);
+            GPIO_WriteBit(GPIOC, GPIO_Pin_6, (mul &amp; 8)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_5, (mul &amp; 16)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_2, (mul &amp; 32)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_3, (mul &amp; 64)?SET:RESET);
+            GPIO_WriteBit(GPIOD, GPIO_Pin_4, (mul &amp; 128)?SET:RESET);
             Delay_Ms(100);
     }
 }
