@@ -1132,8 +1132,12 @@ while(1)
 	</code></pre>
 </details>
 <hr>
-<h3><i>4_by_4_Multiplier_Implementation_Video</i></h3>
+<h3>4_by_4_Multiplier_Implementation_Video</h3>
+<p><b>Higher Quality Video</b></p>
 <ul>
-	<li><a href="https://drive.google.com/file/d/1_pS-wEMCzns7ERaU2UgeH8P4fgFpzNvg/view?usp=sharing"><b>Video_Link<i></i></b></a></li>
+	<li><a href="https://drive.google.com/file/d/1_pS-wEMCzns7ERaU2UgeH8P4fgFpzNvg/view?usp=sharing"><b>Drive Link<i></i></b></a></li>
+	<li><a href="https://youtu.be/0Qlu3d7ys3I?si=OJO6Nf1cwpFqs78j"><b>YouTube Link<i></i></b></a></li>
 </ul>
-<hr>
+
+https://github.com/user-attachments/assets/a26b2842-a40c-455f-afe3-1f0b9faee3d0
+
