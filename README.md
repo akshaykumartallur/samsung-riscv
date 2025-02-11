@@ -934,7 +934,7 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 	</ul><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_by_4_Multiplier_Circuit.png" alt="4 by 4 Multiplier">
 <br><br>
-<h3>Truth Table for Binary Counter</h3>
+<h3>Truth Table for 4 By 4 Multiplier</h3>
 <table>
 <!--Row 1-->
 	<tr>
