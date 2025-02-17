@@ -286,7 +286,9 @@ spike -d pk fact.o</code></pre>
 <!-- Machine Codes -->
 <details><p><summary>Machine Codes for Different Instructions</summary></p>
 <h2>Machine Codes:</h2>
-<pre>0000000000010184 &ltmain&gt:
+
+```assembly
+0000000000010184 <main>:
    10184:       fe010113                addi    sp,sp,-32
    10188:       00113c23                sd      ra,24(sp)
    1018c:       00813823                sd      s0,16(sp)
@@ -295,21 +297,22 @@ spike -d pk fact.o</code></pre>
    10198:       00100413                li      s0,1
    1019c:       00b00493                li      s1,11
    101a0:       00040513                mv      a0,s0
-   101a4:       03c000ef                jal     ra,101e0 &lt;__muldi3&gt;
+   101a4:       03c000ef                jal     ra,101e0 <__muldi3>
    101a8:       0005059b                sext.w  a1,a0
    101ac:       0014041b                addiw   s0,s0,1
-   101b0:       fe9418e3                bne     s0,s1,101a0 &lt;main+0x1c&gt;
+   101b0:       fe9418e3                bne     s0,s1,101a0 <main+0x1c>
    101b4:       00058613                mv      a2,a1
    101b8:       00a00593                li      a1,10
    101bc:       00021537                lui     a0,0x21
    101c0:       1b050513                addi    a0,a0,432 # 211b0 <__clzdi2+0x48>
-   101c4:       298000ef                jal     ra,1045c &lt;printf&gt;
+   101c4:       298000ef                jal     ra,1045c <printf>
    101c8:       00000513                li      a0,0
    101cc:       01813083                ld      ra,24(sp)
    101d0:       01013403                ld      s0,16(sp)
    101d4:       00813483                ld      s1,8(sp)
    101d8:       02010113                addi    sp,sp,32
-   101dc:       00008067                ret</pre>
+   101dc:       00008067                ret
+```
 <!-- 1 -->
 <h3>1. Machine code for <code>addi sp, sp, -32</code></h3>
 <b>&nbsp;&nbsp;Instruction: </b><code>addi sp, sp, -32</code><br><br>
@@ -328,7 +331,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(sp=x2): </b><code>00010</code> </li>
 		   <li><b>Opcode: </b><code>0010011</code></li>
 	   </ul>   
-<pre><code>10184:       fe010113          addi  sp, sp, -32</code></pre>	   
+    
+```assembly 
+10184:       fe010113          addi  sp, sp, -32
+```   
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -372,7 +378,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>imm[4:0] (5 bits): </b><code>11000</code></li>
 		   <li><b>opcode (7 bits): </b><code>0100011</code></li>
 	   </ul>
-<pre><code>10188:       00113c23       sd   ra, 24(sp)</code></pre>	   
+    
+```assembly
+10188:       00113c23       sd   ra, 24(sp)
+```
 <table>
 	<tr>
 		<th>Imm[11:5] (7 bits)</th>
@@ -418,7 +427,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>imm[4:0] (5 bits): </b><code>10000</code></li>
 		   <li><b>opcode (7 bits): </b><code>0100011</code></li>
 	   </ul>
-<pre><code>1018c:       00813823           sd     s0, 16(sp)</code></pre>	   
+    
+```assembly
+1018c:       00813823           sd     s0, 16(sp)
+```
 <table>
 	<tr>
 		<th>Imm[11:5] (7 bits)</th>
@@ -464,7 +476,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>imm[4:0] (5 bits): </b><code>01000</code></li>
 		   <li><b>opcode (7 bits): </b><code>0100011</code></li>
 	   </ul>
-<pre><code>10190:       00913423           sd    s1, 8(sp)</code></pre>	   
+
+```assembly
+10190:       00913423           sd    s1, 8(sp)
+```
 <table>
 	<tr>
 		<th>Imm[11:5] (7 bits)</th>
@@ -501,7 +516,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(a1=x11): </b><code>01011</code></li>
 		   <li><b>Opcode: </b><code>0010011</code> </li>
 	   </ul>
-<pre><code>10194:       00100593          li    a1, 1</code></pre>	   
+    
+```assembly
+10194:       00100593          li    a1, 1
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -536,7 +554,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(s0=x8): </b><code>01000</code></li>
 		   <li><b>Opcode: </b><code>0010011</code></li>
 	   </ul>
-<pre><code>10198:       00100413            li    s0,1</code></pre>	   
+    
+```assembly
+10198:       00100413            li    s0,1
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -571,7 +592,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(s1=x9): </b><code>01001</code> </li>
 		   <li><b>Opcode: </b><code>0010011</code> </li>
 	   </ul>
-<pre><code>1019c:       00b00493            li     s1, 11</code></pre>	   
+
+```assembly
+1019c:       00b00493            li     s1, 11
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -606,7 +630,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(a0=x10): </b><code>01010</code></li>
 		   <li><b>Opcode: </b><code>0010011</code></li>
 	   </ul>
-<pre><code>101a0:       00040513            mv    a0, s0</code></pre>	   
+    
+```assembly
+101a0:       00040513            mv    a0, s0
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -641,7 +668,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(a1=x11): </b><code>01011</code></li>
 		   <li><b>Opcode: </b><code>0011011</code></li>
 	   </ul> 
-<pre><code>101a8:       0005059b          sext.w  a1, a0 </code></pre>	   
+    
+```assembly
+101a8:       0005059b          sext.w  a1, a0 
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -676,7 +706,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(s0=x8): </b><code>01000</code></li>
 		   <li><b>Opcode: </b><code>0011011</code></li>
 	   </ul>
-<pre><code>101ac:       0014041b          addiw   s0, s0, 1</code></pre>	   
+
+```assembly
+101ac:       0014041b          addiw   s0, s0, 1
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -707,7 +740,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(a0=x10): </b><code>01010</code> </li>
 		   <li><b>Opcode: </b><code>0110111</code> </li>
 	   </ul>
-<pre><code>101bc:       00021537          lui  a0, 0x21</code></pre>	   
+
+```assembly
+101bc:       00021537          lui  a0, 0x21
+```
 <table>
 	<tr>
 		<th>Immediate (20 bits)</th>
@@ -738,7 +774,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(ra=x1): </b><code>00001</code></li>
 		   <li><b>Opcode: </b><code>0000011</code></li>
 	   </ul> 	 
-<pre><code>101cc:       01813083          ld   ra, 24(sp)</code></pre>	   
+
+```assembly
+101cc:       01813083          ld   ra, 24(sp)
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -773,7 +812,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(s0=x8): </b><code>01000</code> </li>
 		   <li><b>Opcode: </b><code>0000011</code></li>
 	   </ul> 
-<pre><code>101d0:       01013403          ld   s0, 16(sp)</code></pre>	   
+
+```assembly
+101d0:       01013403          ld   s0, 16(sp)
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -808,7 +850,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(s1=x9): </b><code>01001</code> </li>
 		   <li><b>Opcode: </b><code>0000011</code></li>
 	   </ul> 
-<pre><code>101d4:       00813483          ld   s1, 8(sp)</code></pre>	   
+
+```assembly
+101d4:       00813483          ld   s1, 8(sp)
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -843,7 +888,10 @@ spike -d pk fact.o</code></pre>
 		   <li><b>rd(zero=x0): </b><code>00000</code></li>
 		   <li><b>Opcode: </b><code>1100111</code></li>
 	   </ul>
-<pre><code>101dc:       00008067       ret</code></pre>	   
+
+```assembly
+101dc:       00008067       ret
+```
 <table>
 	<tr>
 		<th>Immediate (12 bits)</th>
@@ -871,11 +919,17 @@ spike -d pk fact.o</code></pre>
 2. Compile the RISC-V Core: Verilog netlist and Testbench<br>
 3. Observe the waveform output in GTKWave window<br>
 <h4>Installing iverilog and GTKWave in Ubuntu:</h4>
-<pre><code>sudo apt install iverilog gtkwave</code></pre>
+	
+```bash
+sudo apt install iverilog gtkwave
+```
 <h3>Simulate and run the verilog code</h3>
-<pre><code>iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+
+```bash
+iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
 ./iiitb_rv32i
-gtkwave iiitb_rv32i.vcd</code></pre>
+gtkwave iiitb_rv32i.vcd
+```
 <h4>GTKWave Window:</h4><br>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%204/GTKWave_Window.png" alt="GTKWave Window">
 <br><br>
@@ -1102,9 +1156,9 @@ gtkwave iiitb_rv32i.vcd</code></pre>
 
 ```c
 //4 by 4 Multiplier
-#include&lt;stdio.h&gt;
-#include&lt;debug.h&gt;
-#include&lt;ch32v00x.h&gt;
+#include<stdio.h>
+#include<debug.h>
+#include<ch32v00x.h>
 	
 void GPIO_Config(void)
 {
