@@ -989,7 +989,7 @@ gtkwave iiitb_rv32i.vcd
 <hr>
 <!-- Task 5 -->
 <details>
-	<summary><b>Task 5:</b> To implement any digital circuit using VSDSquadron Mini and check whether building and uploading of C program file on RISCV processor works.</summary>
+	<summary><b>Task 5:</b> To implement any digital circuit using VSDSquadron Mini.</summary>
 <h2>Implement 4 by 4 Multiplier Using VSDSquadron Mini </h2>
 <h3>Overview</h3>
 	<p>This project involves the implementation of a 4x4 binary multiplier circuit using the VSD Squadron Mini, a RISC-V based SoC development kit. A binary multiplier is a fundamental digital circuit that performs binary multiplication of two numbers. This project showcases the practical application of digital logic and RISC-V architecture by implementing a multiplication function. It involves reading and writing binary data through GPIO pins, implementing the 4x4 multiplier logic , simulating the design using the PlatformIO IDE, and displaying the multiplier's 8-bit output using LEDs. This project provides a hands-on understanding of how to control and manipulate digital signals using a microcontroller and how to implement a more complex digital building block like a multiplier.  It also highlights the use of RISC-V for custom hardware acceleration or digital signal processing applications.</p>
@@ -1009,8 +1009,75 @@ gtkwave iiitb_rv32i.vcd
 		<li><b>Outputs: </b> Eight LEDs are connected to display the result of 4 by 4 Binary Multiplier.</li>
 		<li>The GPIO pins are configured according to the reference mannual ensuring the correct flow of signals between the components.</li>
 	</ul><br>
+<table>
+	<tr>
+		<th align="center">Component</th>
+		<th align="center">Pin</th>
+		<th align="center">Purpose</th>
+	</tr>
+	<tr>
+		<td align="center">Push Button 1</td>
+		<td align="center">PC0</td>
+		<td align="center">Increment the value of A</td>
+	</tr>
+	<tr>
+		<td align="center">Push Button 2</td>
+		<td align="center">PC1</td>
+		<td align="center">Increment the value of B</td>
+	</tr>
+	<tr>
+		<td align="center">Push Button 3</td>
+		<td align="center">PC2</td>
+		<td align="center">reset the values of A and B</td>
+	</tr>
+	<tr>
+		<td align="center">LED 1</td>
+		<td align="center">PC3</td>
+		<td align="center">output bit0</td>
+	</tr>
+	<tr>
+		<td align="center">LED 2</td>
+		<td align="center">PC4</td>
+		<td align="center">output bit1</td>
+	</tr>
+	<tr>
+		<td align="center">LED 3</td>
+		<td align="center">PC5</td>
+		<td align="center">output bit2</td>
+	</tr>
+	<tr>
+		<td align="center">LED 4</td>
+		<td align="center">PC6</td>
+		<td align="center">output bit3</td>
+	</tr>
+	<tr>
+		<td align="center">LED 5</td>
+		<td align="center">PD5</td>
+		<td align="center">output bit4</td>
+	</tr>
+	<tr>
+		<td align="center">LED 6</td>
+		<td align="center">PD2</td>
+		<td align="center">output bit5</td>
+	</tr>
+	<tr>
+		<td align="center">LED 7</td>
+		<td align="center">PD3</td>
+		<td align="center">output bit6</td>
+	</tr>
+	<tr>
+		<td align="center">LED 8</td>
+		<td align="center">PD4</td>
+		<td align="center">output bit7</td>
+	</tr>
+</table>
 <img src="https://github.com/akshaykumartallur/samsung-riscv/blob/main/Task%205/4_by_4_Multiplier_Circuit.png" alt="4 by 4 Multiplier">
 <br><br>
+</details>
+<hr>
+<!--Task 6-->
+<details>
+	<summary><b>Task 6: </b>Building and uploading of C program file on RISCV processor and implementation.</summary>
 <h3>Working and Block Diagram</h3>
 <ol type="1">
 	<li><b>Physical Circuit:</b> Push button for A increments the value of A and push button for B increments the value of B and it is coded to multiply A and B to get the output in 8 LEDs as the output will be 8 bits in size.</li>
